@@ -4,6 +4,240 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/azul"
     tools:context=".inicio.Inicio">
+
+    <TextView
+        android:id="@+id/tituloInicioProgreso"
+        style="@style/TituloNaranja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/tituloProgreso"
+        app:layout_constraintBottom_toTopOf="@+id/subtituloInicioProgreso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutDescubre"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/butonIzquierdaInicioProgreso"
+        style="@style/BotonIconoNaranjaSecundario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="178dp"
+        android:layout_marginEnd="29dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/subtituloInicioProgreso"
+        app:layout_constraintEnd_toStartOf="@+id/butonDerechaInicioProgreso"
+        app:layout_constraintStart_toEndOf="@+id/subtituloInicioProgreso"
+        app:layout_constraintTop_toTopOf="@+id/subtituloInicioProgreso"
+        app:srcCompat="@drawable/icons8_chevron_left_30"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <ImageButton
+        android:id="@+id/butonDerechaInicioProgreso"
+        style="@style/BotonIconoNaranjaSecundario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/butonIzquierdaInicioProgreso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/butonIzquierdaInicioProgreso"
+        app:srcCompat="@drawable/icons8_chevron_right_30"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/subtituloInicioProgreso"
+        style="@style/SubtituloBlanco"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/subtituloProgreso"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutProgreso"
+        app:layout_constraintEnd_toStartOf="@+id/butonIzquierdaInicioProgreso"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloInicioProgreso"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/buttonInicoTemas"
+        style="@style/BotonIconoNaranja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/tituloInicioDescubre"
+        app:layout_constraintEnd_toStartOf="@+id/butonInicioBusqueda"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_dialog_dialer"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/butonInicioBusqueda"
+        style="@style/BotonIconoNaranja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_search"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/subtituloInicioAprende"
+        style="@style/SubtituloBlanco"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/SubtituloAprende"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutDescubre"
+        app:layout_constraintEnd_toStartOf="@+id/butonIzquierdaInicioDescubre"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloInicioDescubre"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/butonDerechaInicioDescubre"
+        style="@style/BotonIconoNaranjaSecundario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/butonIzquierdaInicioDescubre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/butonIzquierdaInicioDescubre"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icons8_chevron_right_30"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/butonIzquierdaInicioDescubre"
+        style="@style/BotonIconoNaranjaSecundario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="29dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/subtituloInicioAprende"
+        app:layout_constraintEnd_toStartOf="@+id/butonDerechaInicioDescubre"
+        app:layout_constraintTop_toTopOf="@+id/subtituloInicioAprende"
+        app:srcCompat="@drawable/icons8_chevron_left_30"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/tituloInicioDescubre"
+        style="@style/TituloNaranja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/tituloDescubre"
+        app:layout_constraintBottom_toTopOf="@+id/subtituloInicioAprende"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInicoTemas"
+        tools:ignore="TextContrastCheck" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutDescubre"
+        android:layout_width="409dp"
+        android:layout_height="179dp"
+        app:layout_constraintBottom_toTopOf="@+id/tituloInicioProgreso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtituloInicioAprende">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutProgreso"
+        android:layout_width="409dp"
+        android:layout_height="179dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butonIzquierdaInicioProgreso"
+        app:layout_constraintVertical_bias="0.882">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="410dp"
+        android:layout_height="70dp"
+        android:background="@color/naranja"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/botonInicioRecordatorios"
+            style="@style/BotonIconoBlancoSecundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/botonInicioNotas"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_notifications_black_24dp"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/botonInicioNotas"
+            style="@style/BotonIconoBlancoSecundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/botonInicioRecordatorios"
+            app:layout_constraintEnd_toStartOf="@+id/botonInicioFavoritos"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/botonInicioRecordatorios"
+            app:layout_constraintTop_toTopOf="@+id/botonInicioRecordatorios"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/icons8_note_24"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/botonInicioFavoritos"
+            style="@style/BotonIconoBlancoSecundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/botonInicioNotas"
+            app:layout_constraintEnd_toStartOf="@+id/botonInicioPerfil"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/botonInicioNotas"
+            app:layout_constraintTop_toTopOf="@+id/botonInicioNotas"
+            app:srcCompat="@drawable/icons8_heart_30"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/botonInicioPerfil"
+            style="@style/BotonIconoBlancoSecundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/botonInicioFavoritos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/botonInicioFavoritos"
+            app:layout_constraintTop_toTopOf="@+id/botonInicioFavoritos"
+            app:srcCompat="@drawable/icons8_person_30"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

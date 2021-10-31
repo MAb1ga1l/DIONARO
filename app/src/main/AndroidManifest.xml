@@ -19,12 +19,8 @@
             android:name=".LogIn.Login"
             android:exported="true" />
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="true"
-            android:label="@string/title_activity_login" />
-        <activity
             android:name=".inicio.Inicio"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".informacion.Informacion"
             android:exported="true"
@@ -44,6 +40,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
