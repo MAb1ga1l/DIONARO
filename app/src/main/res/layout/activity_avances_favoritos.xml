@@ -7,7 +7,6 @@
     tools:context=".AvanceFavoritos.AvancesFavoritos">
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:text="Favoritos"

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azul"
-    tools:context=".inicio.Inicio">
+    tools:context=".inicio.Inicio"
+    tools:ignore="Overdraw">
 
     <TextView
         android:id="@+id/tituloInicioProgreso"
