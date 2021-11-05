@@ -20,7 +20,6 @@
         <item name="android:width">52dp</item>
         <item name="android:height">47dp</item>
     </style>
-
     <style name="BotonIconoNaranjaSecundario">
         <item name="android:background">@android:color/transparent</item>
         <item name="android:tint">@color/naranja</item>
@@ -43,5 +42,26 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/bubblegum_sans</item>
+    </style>
+    <style name="TextoBlanco">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/bubblegum_sans</item>
+    </style>
+    <style name="TarjetaMorada">
+        <item name="android:layout_height">160dp</item>
+        <item name="android:layout_width">315dp</item>
+    </style>
+    <style name="logosImageView">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+    </style>
+    <style name="MuestraDeInfo" parent="TextoBlanco">
+        <item name="android:height">48dp</item>
+        <item name="android:width">169dp</item>
+    </style>
+    <style name="ProgresBarSiseño" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:height">16dp</item>
+        <item name="android:width">120dp</item>
     </style>
 </resources>

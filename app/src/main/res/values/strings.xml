@@ -6,5 +6,11 @@
     <string name="SubtituloAprende">Y Aprende</string>
     <string name="tituloProgreso">Tu Progreso</string>
     <string name="subtituloProgreso">lento pero seguro</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tiruloTarjetaDescubre">Nomre de App</string>
+    <string name="textoAleatorio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel dignissim nisl.</string>
+    <string name="tituloTarjetaProgreso">Material</string>
+    <string name="textoTarjetaProgreso">Última vez que se abrio dd / mm / aa</string>
 
 </resources>

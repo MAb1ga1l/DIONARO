@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".inicio.FragmentTarjetaDescubre"
+    android:background="@drawable/rounded_shape"
+    style="@style/TarjetaMorada"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/LogoTarjetaDescubreInicio"
+            style="@style/logosImageView"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="14dp"
+            android:src="@drawable/logo_playstore"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tituloTarjetaDescubreInicio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tituloTarjetaDescubreInicio"
+            style="@style/SubtituloBlanco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:text="@string/tiruloTarjetaDescubre"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBarTarjetaInicio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+        <RatingBar
+            android:id="@+id/ratingBarTarjetaInicio"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:rating="2"
+            app:layout_constraintBottom_toTopOf="@+id/textoTarjetaDescubreInicio"
+            app:layout_constraintStart_toStartOf="@+id/tituloTarjetaDescubreInicio"
+            app:layout_constraintTop_toBottomOf="@+id/tituloTarjetaDescubreInicio" />
+
+        <TextView
+            android:id="@+id/textoTarjetaDescubreInicio"
+            style="@style/MuestraDeInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoAleatorio"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ratingBarTarjetaInicio"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBarTarjetaInicio"
+            tools:ignore="TextContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
