@@ -1,12 +1,68 @@
 package com.example.dionaro.inicio
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageButton
+import android.widget.Toast
 import com.example.dionaro.R
 
 class Inicio : AppCompatActivity() {
+
+    var actividadRegreso = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
     }
+
+    companion object {
+        fun nuevaInstancia (contexto: Context) : Intent{
+            //De forma general aquí se le va dar el intento a quien busque ejecutarlo
+            return Intent(contexto, Inicio::class.java).apply {
+                //aquí encontraremos la información del perfil que se inicio
+            }
+        }
+    }
+
+    fun redireccionRecordatorios(unBoton: View){
+        actividadRegreso = "Recordatorios"
+        val datos = intent.apply {
+            putExtra("Actividad", actividadRegreso)
+        }
+        setResult(Activity.RESULT_OK,datos)
+        finish()
+    }
+
+    fun redireccionNotas(unBoton: View){
+        actividadRegreso = "Notas"
+        val datos = intent.apply {
+            putExtra("Actividad", actividadRegreso)
+        }
+        setResult(Activity.RESULT_OK,datos)
+        finish()
+    }
+
+    fun redireccionFavoritos(unBoton: View){
+        actividadRegreso = "Favoritos"
+        val datos = intent.apply {
+            putExtra("Actividad", actividadRegreso)
+        }
+        setResult(Activity.RESULT_OK,datos)
+        finish()
+    }
+
+    fun redireccionPerfil(unBoton: View){
+        actividadRegreso = "Perfil"
+        val datos = intent.apply {
+            putExtra("Actividad", actividadRegreso)
+        }
+        setResult(Activity.RESULT_OK,datos)
+        finish()
+    }
+
+
 }

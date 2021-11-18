@@ -25,6 +25,8 @@
             android:name=".informacion.Informacion"
             android:exported="true"
             android:label="@string/title_activity_informacion" />
+        <activity android:name=".Perfil.Perfil"
+            android:exported="true"/>
         <activity
             android:name=".BusquedaDescubrimiento.BusquedaDescubrimiento"
             android:exported="true" />
