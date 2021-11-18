@@ -214,7 +214,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_notifications_black_24dp"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+            tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
         <ImageButton
             android:id="@+id/botonInicioNotas"
@@ -230,7 +230,7 @@
             app:layout_constraintTop_toTopOf="@+id/botonInicioRecordatorios"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/icons8_note_24"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+            tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
         <ImageButton
             android:id="@+id/botonInicioFavoritos"
@@ -245,7 +245,7 @@
             app:layout_constraintStart_toEndOf="@+id/botonInicioNotas"
             app:layout_constraintTop_toTopOf="@+id/botonInicioNotas"
             app:srcCompat="@drawable/icons8_heart_30"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+            tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
         <ImageButton
             android:id="@+id/botonInicioPerfil"
@@ -260,7 +260,7 @@
             app:layout_constraintStart_toEndOf="@+id/botonInicioFavoritos"
             app:layout_constraintTop_toTopOf="@+id/botonInicioFavoritos"
             app:srcCompat="@drawable/icons8_person_30"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+            tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

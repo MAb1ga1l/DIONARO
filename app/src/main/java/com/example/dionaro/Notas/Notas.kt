@@ -2,10 +2,9 @@ package com.example.dionaro.Notas
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.R
-import com.example.dionaro.Recordatorios.Recordatorios
 
 class Notas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

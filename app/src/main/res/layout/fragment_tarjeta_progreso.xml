@@ -11,7 +11,6 @@
         android:layout_height="match_parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/LogoTarjetaProgresoInicio"
             style="@style/logosImageView"
             android:layout_marginStart="26dp"
             android:layout_marginEnd="14dp"

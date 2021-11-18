@@ -2,10 +2,9 @@ package com.example.dionaro.AvanceFavoritos
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.R
-import com.example.dionaro.Recordatorios.Recordatorios
 
 class AvancesFavoritos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

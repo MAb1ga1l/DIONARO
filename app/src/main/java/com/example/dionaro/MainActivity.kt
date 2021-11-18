@@ -1,10 +1,9 @@
 package com.example.dionaro
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.AvanceFavoritos.AvancesFavoritos
 import com.example.dionaro.Notas.Notas
 import com.example.dionaro.Perfil.Perfil
@@ -38,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun cambioActividad(actividad:String){
+    private fun cambioActividad(actividad:String){
         if (actividad=="Recordatorios"){
             val intento = Recordatorios.nuevaInstancia(this)
             ejecutarActividad.launch(intento)
