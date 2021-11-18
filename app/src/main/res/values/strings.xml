@@ -13,7 +13,6 @@
     <string name="textoTarjetaProgreso">Última vez que se abrio dd / mm / aa</string>
     <string name="textoFechaRecordatorios"> Mes Año</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="textoFichaRecordatorioDia">Dia</string>
     <string name="tituloRecordatorio">Recordatorio #</string>
     <string name="textoNotaRecordatorio" > Nota del recordatorio</string>

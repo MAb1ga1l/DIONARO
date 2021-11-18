@@ -20,12 +20,7 @@
         <item name="android:width">52dp</item>
         <item name="android:height">47dp</item>
     </style>
-    <style name="BotonIconoBlanco">
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:tint">@color/white</item>
-        <item name="android:width">590dp</item>
-        <item name="android:height">47dp</item>
-    </style>
+
     <style name="BotonIconoNaranjaSecundario">
         <item name="android:background">@android:color/transparent</item>
         <item name="android:tint">@color/naranja</item>

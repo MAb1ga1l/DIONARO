@@ -1,3 +1,5 @@
+@file:Suppress("unused", "ClassName")
+
 package com.example.dionaro.Recordatorios
 
 import android.os.Bundle
@@ -16,10 +18,6 @@ class recordatoriosPorDia : Fragment() {
     private lateinit var recordatorioRecyclerView: RecyclerView
     private var adaptador: RecordatorioAdapter? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +27,7 @@ class recordatoriosPorDia : Fragment() {
         recordatorioRecyclerView =
             vista.findViewById(R.id.recordatoriosRecyclerView) as RecyclerView
         recordatorioRecyclerView.layoutManager = LinearLayoutManager(context)
-        val inventario = mutableListOf<String>("Recordatorio 1", "Recordatorio 2", "Recordatorio 3","Recordatorio 4","Recordatorio 5")
+        val inventario = mutableListOf("Recordatorio 1", "Recordatorio 2", "Recordatorio 3","Recordatorio 4","Recordatorio 5")
         adaptador = RecordatorioAdapter(inventario)
         recordatorioRecyclerView.adapter = adaptador
         return vista
