@@ -20,6 +20,12 @@
         <item name="android:width">52dp</item>
         <item name="android:height">47dp</item>
     </style>
+    <style name="BotonIconoBlanco">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:tint">@color/white</item>
+        <item name="android:width">590dp</item>
+        <item name="android:height">47dp</item>
+    </style>
     <style name="BotonIconoNaranjaSecundario">
         <item name="android:background">@android:color/transparent</item>
         <item name="android:tint">@color/naranja</item>
@@ -38,6 +44,13 @@
         <item name="android:textSize">24sp</item>
         <item name="android:fontFamily">@font/bubblegum_sans</item>
     </style>
+
+    <style name="TituloBlanco">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/bubblegum_sans</item>
+    </style>
+
     <style name="SubtituloBlanco">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">16sp</item>
