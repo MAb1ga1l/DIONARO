@@ -23,8 +23,9 @@ class MainActivity : AppCompatActivity() {
     private var ejecutarActividad = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         respuesta ->
         val datos : Intent? = respuesta.data
+        val accionARealizar = datos?.getStringExtra("Accion")
+        cambioRegresoActividad(accionARealizar)
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +54,13 @@ class MainActivity : AppCompatActivity() {
         if (actividad=="Perfil"){
             val intento = Perfil.nuevaInstancia(this)
             ejecutarActividad.launch(intento)
+        }
+    }
+
+    private fun cambioRegresoActividad(accionARealizar: String?) {
+        if(accionARealizar == "RegresoHome"){
+            val intento = Inicio.nuevaInstancia(this)
+            ejecutaInicio.launch(intento)
         }
     }
 
