@@ -22,6 +22,7 @@ class Recordatorios : AppCompatActivity() {
         }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun regresarInicio(view: View){
         val accion = "RegresoHome"
         val datos = intent.apply {
