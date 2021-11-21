@@ -38,7 +38,6 @@
         tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,TextContrastCheck" />
 
     <Button
-        android:id="@+id/buttonTemaI"
         style="@style/botonAzulResaltado"
         android:layout_width="85dp"
         android:layout_height="40dp"

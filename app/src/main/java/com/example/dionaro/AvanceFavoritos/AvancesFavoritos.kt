@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.R
 
 class AvancesFavoritos : AppCompatActivity() {
-    lateinit var tituloActividad : TextView
+    private lateinit var tituloActividad : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

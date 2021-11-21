@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.example.dionaro.AvanceFavoritos
 
 import android.os.Bundle
@@ -29,11 +31,7 @@ class ListaMateriales : Fragment() {
         return vista
     }
 
-    companion object {
-        fun newInstance(param1: String, param2: String) =
-            ListaMateriales().apply {
-            }
-    }
+    companion object;
 
     private inner class TarjetaAdapter(var inventario: List<String>): RecyclerView.Adapter<TarjetaHolder>(){
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TarjetaHolder {

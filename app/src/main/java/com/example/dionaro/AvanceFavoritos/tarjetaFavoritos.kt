@@ -1,3 +1,5 @@
+@file:Suppress("ClassName")
+
 package com.example.dionaro.AvanceFavoritos
 
 import android.os.Bundle
@@ -25,10 +27,5 @@ class tarjetaFavoritos : Fragment() {
     }
 
     companion object {
-        fun newInstance(param1: String, param2: String) =
-            tarjetaFavoritos().apply {
-                arguments = Bundle().apply {
-                }
-            }
     }
 }

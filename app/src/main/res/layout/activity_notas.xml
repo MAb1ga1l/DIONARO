@@ -8,7 +8,6 @@
     tools:context=".Notas.Notas" >
 
     <ImageButton
-        android:id="@+id/botonNuevaNota"
         style="@style/BotonIconoBlancoSecundario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
