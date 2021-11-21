@@ -23,5 +23,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="textoFechaTarjetaFav">Fecha de guardado</string>
     <string name="fechaEjemplo">dd / mm / aa</string>
+    <string name="tituloPerfil">Tu Perfil</string>
 
 </resources>

@@ -7,6 +7,8 @@
         <entry key="app/src/main/res/drawable/half_rounded_shape.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/drawable/img.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rounded_shape.xml" value="0.261025641025641" />
+        <entry key="app/src/main/res/drawable/rounded_shape_orange.xml" value="0.31145833333333334" />
+        <entry key="app/src/main/res/drawable/rounded_shape_white.xml" value="0.30648148148148147" />
         <entry key="app/src/main/res/drawable/shadow_button.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/font/bubblegum_sans.xml" value="0.1453125" />
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.170703125" />

@@ -1,4 +1,3 @@
-@file:Suppress("unused", "ClassName")
 
 package com.example.dionaro.Recordatorios
 
@@ -31,12 +30,6 @@ class recordatoriosPorDia : Fragment() {
         adaptador = RecordatorioAdapter(inventario)
         recordatorioRecyclerView.adapter = adaptador
         return vista
-    }
-
-    companion object {
-        fun newInstance(param1: String, param2: String) =
-            recordatoriosPorDia().apply {
-            }
     }
 
     private inner class RecordatorioAdapter(var inventario: List<String>) :
