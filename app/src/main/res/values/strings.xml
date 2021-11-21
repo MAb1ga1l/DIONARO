@@ -14,8 +14,15 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="textoFichaRecordatorioDia">Dia</string>
     <string name="tituloRecordatorio">Recordatorio #</string>
-    <string name="textoNotaRecordatorio" > Nota del recordatorio</string>
+    <string name="textoNotaRecordatorio"> Nota del recordatorio</string>
     <string name="textoHoraRecordatorio">hh : mm</string>
     <string name="tituloNotas">Notas</string>
+    <string name="textoBotonTema">TEMA</string>
+    <string name="subtituloAvancesFavoritos">Filtra por tema</string>
+    <string name="subtituloMaterial">Material</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textoFechaTarjetaFav">Fecha de guardado</string>
+    <string name="fechaEjemplo">dd / mm / aa</string>
 
 </resources>

@@ -1,8 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/azul"
     android:layout_height="match_parent"
+    android:background="@color/azul"
     tools:context=".AvanceFavoritos.AvancesFavoritos"
-    tools:ignore="Overdraw" />
+    tools:ignore="Overdraw">
+
+    <ImageButton
+        android:id="@+id/botonMenuAvancesFav"
+        style="@style/BotonIconoNaranjaSecundario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/tituloTarjetaProgreso"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSubituloMaterialAvancesFav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewSubituloMaterialAvancesFav"
+        app:layout_constraintTop_toTopOf="@+id/textViewSubituloMaterialAvancesFav"
+        app:srcCompat="@drawable/icons8_menu_vertical_24"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/buttonTemaG"
+        style="@style/botonAzulResaltado"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shadow_button"
+        android:text="@string/textoBotonTema"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSubituloMaterialAvancesFav"
+        app:layout_constraintEnd_toEndOf="@+id/buttonTemaD"
+        app:layout_constraintStart_toStartOf="@+id/buttonTemaD"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTemaD"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonTemaI"
+        style="@style/botonAzulResaltado"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/shadow_button"
+        android:text="@string/textoBotonTema"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonTemaH"
+        app:layout_constraintEnd_toEndOf="@+id/buttonTemaF"
+        app:layout_constraintStart_toStartOf="@+id/buttonTemaF"
+        app:layout_constraintTop_toTopOf="@+id/buttonTemaH"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonTemaH"
+        style="@style/botonAzulResaltado"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/shadow_button"
+        android:text="@string/textoBotonTema"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonTemaG"
+        app:layout_constraintEnd_toEndOf="@+id/buttonTemaE"
+        app:layout_constraintStart_toStartOf="@+id/buttonTemaE"
+        app:layout_constraintTop_toTopOf="@+id/buttonTemaG"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonTemaD"
+        style="@style/botonAzulResaltado"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shadow_button"
+        android:text="@string/textoBotonTema"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTemaG"
+        app:layout_constraintEnd_toEndOf="@+id/buttonTemaA"
+        app:layout_constraintStart_toStartOf="@+id/buttonTemaA"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTemaA"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonTemaF"
+        style="@style/botonAzulResaltado"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/shadow_button"
+        android:text="@string/textoBotonTema"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonTemaE"
+        app:layout_constraintEnd_toEndOf="@+id/buttonTemaC"
+        app:layout_constraintStart_toStartOf="@+id/buttonTemaC"
+        app:layout_constraintTop_toTopOf="@+id/buttonTemaE"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonTemaE"
+        style="@style/botonAzulResaltado"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/shadow_button"
+        android:text="@string/textoBotonTema"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonTemaD"
+        app:layout_constraintEnd_toEndOf="@+id/buttonTemaB"
+        app:layout_constraintStart_toStartOf="@+id/buttonTemaB"
+        app:layout_constraintTop_toTopOf="@+id/buttonTemaD"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/textViewTituloAvancesFavoritos"
+        style="@style/TituloBlanco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tituloNotas"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSubituloAvancesFav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonHomeAvancesFavoritos" />
+
+    <ImageButton
+        android:id="@+id/botonHomeAvancesFavoritos"
+        style="@style/BotonIconoBlancoSecundario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/todo"
+        android:onClick="regresarInicio"
+        app:layout_constraintBottom_toTopOf="@+id/textViewTituloAvancesFavoritos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icons8_home_24"
+        tools:ignore="DuplicateSpeakableTextCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/buttonTemaC"
+        style="@style/botonAzulResaltado"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/shadow_button"
+        android:text="@string/textoBotonTema"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonTemaB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonTemaB"
+        app:layout_constraintTop_toTopOf="@+id/buttonTemaB"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonTemaB"
+        style="@style/botonAzulResaltado"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/shadow_button"
+        android:text="@string/textoBotonTema"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonTemaA"
+        app:layout_constraintEnd_toStartOf="@+id/buttonTemaC"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonTemaA"
+        app:layout_constraintTop_toTopOf="@+id/buttonTemaA"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonTemaA"
+        style="@style/botonAzulResaltado"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shadow_button"
+        android:text="@string/textoBotonTema"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTemaD"
+        app:layout_constraintEnd_toStartOf="@+id/buttonTemaB"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSubituloAvancesFav"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/textViewSubituloAvancesFav"
+        style="@style/SubtituloNaranja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/subtituloAvancesFavoritos"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTemaA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonTemaA"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloAvancesFavoritos"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/textViewSubituloMaterialAvancesFav"
+        style="@style/SubtituloNaranja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="283dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/subtituloMaterial"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/botonMenuAvancesFav"
+        app:layout_constraintStart_toStartOf="@+id/buttonTemaG"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTemaG"
+        tools:ignore="TextContrastCheck" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSubituloMaterialAvancesFav">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView3"
+            android:name="com.example.dionaro.AvanceFavoritos.ListaMateriales"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/fragment_lista_materiales" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

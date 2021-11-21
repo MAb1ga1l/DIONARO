@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             ejecutarActividad.launch(intento)
         }
         if (actividad=="Favoritos"){
-            val intento = AvancesFavoritos.nuevaInstancia(this)
+            val intento = AvancesFavoritos.nuevaInstancia(this,actividad)
             ejecutarActividad.launch(intento)
         }
         if (actividad=="Perfil"){

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/TarjetaMorada"
+    android:background="@drawable/rounded_shape"
+    tools:context=".AvanceFavoritos.tarjetaFavoritos">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/botonEliminarTarjetaFavoritos"
+            style="@style/BotonIconoNaranjaSecundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/tituloTarjetaProgreso"
+            app:layout_constraintBottom_toBottomOf="@+id/botonGuardarAvanceFavoritos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/botonGuardarAvanceFavoritos"
+            app:layout_constraintTop_toTopOf="@+id/botonGuardarAvanceFavoritos"
+            app:srcCompat="@drawable/icons8_trash_24"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+        <ImageButton
+            android:id="@+id/botonGuardarAvanceFavoritos"
+            style="@style/BotonIconoNaranjaSecundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/tituloTarjetaProgreso"
+            app:layout_constraintBottom_toBottomOf="@+id/tituloTarjetaFavoritos"
+            app:layout_constraintEnd_toStartOf="@+id/botonEliminarTarjetaFavoritos"
+            app:layout_constraintStart_toEndOf="@+id/tituloTarjetaFavoritos"
+            app:layout_constraintTop_toTopOf="@+id/tituloTarjetaFavoritos"
+            app:srcCompat="@drawable/icons8_running_24"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageViewLogoTarjetaFav"
+            style="@style/logosImageView"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/youtube_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tituloTarjetaFavoritos"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tituloTarjetaFavoritos"
+            style="@style/SubtituloBlanco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="87dp"
+            android:text="@string/subtituloMaterial"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTextoFecha"
+            app:layout_constraintEnd_toStartOf="@+id/botonGuardarAvanceFavoritos"
+            app:layout_constraintStart_toStartOf="@+id/textViewTextoFecha"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textoTarjetaFavoritos"
+            style="@style/MuestraDeInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoAleatorio"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.204"
+            app:layout_constraintStart_toEndOf="@+id/imageViewLogoTarjetaFav"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFechaTarjetaFav"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textViewTextoFecha"
+            style="@style/TextoBlanco"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/textoFechaTarjetaFav"
+            app:layout_constraintBottom_toTopOf="@+id/textViewFechaTarjetaFav"
+            app:layout_constraintEnd_toEndOf="@+id/textViewFechaTarjetaFav"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/textViewFechaTarjetaFav"
+            app:layout_constraintTop_toBottomOf="@+id/tituloTarjetaFavoritos"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textViewFechaTarjetaFav"
+            style="@style/TextoBlanco"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/fechaEjemplo"
+            app:layout_constraintBottom_toTopOf="@+id/textoTarjetaFavoritos"
+            app:layout_constraintEnd_toEndOf="@+id/textoTarjetaFavoritos"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/textoTarjetaFavoritos"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTextoFecha"
+            tools:ignore="TextContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
