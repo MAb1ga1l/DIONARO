@@ -10,6 +10,7 @@ import com.example.dionaro.Descubrimiento.Descubrimiento
 import com.example.dionaro.Notas.Notas
 import com.example.dionaro.Perfil.Perfil
 import com.example.dionaro.Recordatorios.Recordatorios
+import com.example.dionaro.informacion.Informacion
 import com.example.dionaro.inicio.Inicio
 
 class MainActivity : AppCompatActivity() {
@@ -67,6 +68,10 @@ class MainActivity : AppCompatActivity() {
         }
         if (actividad=="Descubre"){
             val intento = Descubrimiento.nuevaInstancia(this)
+            ejecutarActividad.launch(intento)
+        }
+        if (actividad=="Material"){
+            val intento = Informacion.nuevaInstancia(this)
             ejecutarActividad.launch(intento)
         }
     }

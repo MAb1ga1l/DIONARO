@@ -21,7 +21,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayoutDescubre"
-        tools:ignore="TextContrastCheck,UsingOnClickInXml" />
+        tools:ignore="TextContrastCheck,UsingOnClickInXml,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/butonIzquierdaInicioProgreso"
@@ -64,7 +64,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tituloInicioProgreso"
-        tools:ignore="TextContrastCheck,UsingOnClickInXml" />
+        tools:ignore="TextContrastCheck,UsingOnClickInXml,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/buttonInicoTemas"
@@ -168,6 +168,7 @@
             android:id="@+id/fragmentContainerView"
             android:name="com.example.dionaro.inicio.FragmentTarjetaDescubre"
             style="@style/TarjetaMorada"
+            android:onClick="redireccionMaterial"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -188,11 +189,12 @@
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView2"
             android:name="com.example.dionaro.inicio.FragmentTarjetaProgreso"
+            style="@style/TarjetaMorada"
+            android:onClick="redireccionMaterial"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            style="@style/TarjetaMorada"
             tools:layout="@layout/fragment_tarjeta_progreso" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

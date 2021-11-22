@@ -107,4 +107,14 @@ class Inicio : AppCompatActivity() {
         finish()
     }
 
+    @Suppress("UNUSED_PARAMETER")
+    fun redireccionMaterial(unBoton: View){
+        actividadRegreso = "Material"
+        val datos = intent.apply {
+            putExtra("Actividad", actividadRegreso)
+        }
+        setResult(Activity.RESULT_OK,datos)
+        finish()
+    }
+
 }
