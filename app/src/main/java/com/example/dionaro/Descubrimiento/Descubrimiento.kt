@@ -3,10 +3,9 @@ package com.example.dionaro.Descubrimiento
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.dionaro.AvanceFavoritos.AvancesFavoritos
+import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.R
 
 class Descubrimiento : AppCompatActivity() {

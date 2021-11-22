@@ -26,6 +26,4 @@ class tarjetaFavoritos : Fragment() {
         return inflater.inflate(R.layout.fragment_tarjeta_favoritos, container, false)
     }
 
-    companion object {
-    }
 }

@@ -3,6 +3,7 @@
     <issue id="IconLocation">
         <ignore path="src/main/res/drawable/icons8_chevron_left_30.png" />
         <ignore path="src/main/res/drawable/icons8_chevron_right_30.png" />
+        <ignore path="src/main/res/drawable/icons8_emergency_exit_24.png" />
         <ignore path="src/main/res/drawable/icons8_heart_30.png" />
         <ignore path="src/main/res/drawable/icons8_home_24.png" />
         <ignore path="src/main/res/drawable/icons8_menu_vertical_24.png" />
@@ -10,6 +11,7 @@
         <ignore path="src/main/res/drawable/icons8_person_30.png" />
         <ignore path="src/main/res/drawable/icons8_running_24.png" />
         <ignore path="src/main/res/drawable/icons8_trash_24.png" />
+        <ignore path="src/main/res/drawable/imagen_perfil.png" />
         <ignore path="src/main/res/drawable/logo_playstore.png" />
         <ignore path="src/main/res/drawable/youtube_logo.jpeg" />
     </issue>

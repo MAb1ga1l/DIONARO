@@ -1,3 +1,4 @@
+@file:Suppress("ClassName")
 
 package com.example.dionaro.Recordatorios
 

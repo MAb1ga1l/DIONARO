@@ -10,9 +10,9 @@ import androidx.fragment.app.DialogFragment
 import com.example.dionaro.R
 
 class DialogoFragmentBusqueda(val listener : (flag : Boolean, texto : String) -> Unit) : DialogFragment(){
-    lateinit var botonCancelarDialog : Button
-    lateinit var botonBuscarDialof : Button
-    lateinit var inputTexto : EditText
+    private lateinit var botonCancelarDialog : Button
+    private lateinit var botonBuscarDialof : Button
+    private lateinit var inputTexto : EditText
 
     override fun onCreateView(
         inflater: LayoutInflater,
