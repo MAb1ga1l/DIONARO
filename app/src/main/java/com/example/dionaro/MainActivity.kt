@@ -2,9 +2,11 @@ package com.example.dionaro
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.AvanceFavoritos.AvancesFavoritos
+import com.example.dionaro.BusquedaDescubrimiento.BusquedaDescubrimiento
 import com.example.dionaro.Notas.Notas
 import com.example.dionaro.Perfil.Perfil
 import com.example.dionaro.Recordatorios.Recordatorios
@@ -16,8 +18,12 @@ class MainActivity : AppCompatActivity() {
         respuesta ->
         val datos : Intent? = respuesta.data
         val actividad = datos?.getStringExtra("Actividad")
+        var textoExtra = datos?.getStringExtra("Data")
+        if (textoExtra == null){
+            textoExtra = ""
+        }
         if (actividad != null) {
-            cambioActividad(actividad)
+            cambioActividad(actividad,textoExtra)
         }
     }
     private var ejecutarActividad = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
@@ -38,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun cambioActividad(actividad:String){
+    private fun cambioActividad(actividad:String,textoExtra : String){
         if (actividad=="Recordatorios"){
             val intento = Recordatorios.nuevaInstancia(this)
             ejecutarActividad.launch(intento)
@@ -53,6 +59,10 @@ class MainActivity : AppCompatActivity() {
         }
         if (actividad=="Perfil"){
             val intento = Perfil.nuevaInstancia(this)
+            ejecutarActividad.launch(intento)
+        }
+        if (actividad=="Busqueda"){
+            val intento = BusquedaDescubrimiento.nuevaInstancia(this, textoExtra)
             ejecutarActividad.launch(intento)
         }
     }

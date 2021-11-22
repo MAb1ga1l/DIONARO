@@ -30,5 +30,10 @@
     <string name="textoFechaNacimiento">Fecha de Nacimiento</string>
     <string name="textoBotonGuardar">Guardar</string>
     <string name="botonEliminarPerfil">Eliminar perfil</string>
+    <string name="textoBusqueda">Buscar</string>
+    <string name="textoBotonBuscar">Buscar</string>
+    <string name="textoBotonCancelar">Cancelar</string>
+    <string name="tituloBuscado">Buscado</string>
+    <string name="textoMaterialVideo">Videos</string>
 
 </resources>

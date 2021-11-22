@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.R
 
@@ -60,6 +61,26 @@ class Inicio : AppCompatActivity() {
         }
         setResult(Activity.RESULT_OK,datos)
         finish()
+    }
+
+
+    fun busquedaPorTexto(unBoton: View){
+        val dialog = DialogoFragmentBusqueda(){ flag, texto ->
+            redireccionBusqueda(flag,texto)
+        }
+        dialog.show(supportFragmentManager, "DialogoBusqueda")
+    }
+
+    fun redireccionBusqueda(flag: Boolean, texto : String){
+        if (flag){
+            actividadRegreso = "Busqueda"
+            val datos = intent.apply {
+                putExtra("Actividad", actividadRegreso)
+                putExtra("Data", texto)
+            }
+            setResult(Activity.RESULT_OK,datos)
+            finish()
+        }
     }
 
 
