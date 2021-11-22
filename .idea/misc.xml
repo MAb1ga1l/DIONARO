@@ -20,7 +20,7 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_notas.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_perfil.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_perfil.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_recordatorios.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_lista_materiales.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_recordatorios_por_dia.xml" value="0.375" />

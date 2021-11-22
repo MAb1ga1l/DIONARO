@@ -24,5 +24,11 @@
     <string name="textoFechaTarjetaFav">Fecha de guardado</string>
     <string name="fechaEjemplo">dd / mm / aa</string>
     <string name="tituloPerfil">Tu Perfil</string>
+    <string name="textoNombrePerfil">Nombre actual</string>
+    <string name="textoPassword">Contraseña actual</string>
+    <string name="textoEmail">Email actual</string>
+    <string name="textoFechaNacimiento">Fecha de Nacimiento</string>
+    <string name="textoBotonGuardar">Guardar</string>
+    <string name="botonEliminarPerfil">Eliminar perfil</string>
 
 </resources>
