@@ -7,6 +7,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.AvanceFavoritos.AvancesFavoritos
 import com.example.dionaro.BusquedaDescubrimiento.BusquedaDescubrimiento
+import com.example.dionaro.Descubrimiento.Descubrimiento
 import com.example.dionaro.Notas.Notas
 import com.example.dionaro.Perfil.Perfil
 import com.example.dionaro.Recordatorios.Recordatorios
@@ -53,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             val intento = Notas.nuevaInstancia(this)
             ejecutarActividad.launch(intento)
         }
-        if (actividad=="Favoritos"){
+        if (actividad=="Favoritos" || actividad=="Progreso"){
             val intento = AvancesFavoritos.nuevaInstancia(this,actividad)
             ejecutarActividad.launch(intento)
         }
@@ -63,6 +64,10 @@ class MainActivity : AppCompatActivity() {
         }
         if (actividad=="Busqueda"){
             val intento = BusquedaDescubrimiento.nuevaInstancia(this, textoExtra)
+            ejecutarActividad.launch(intento)
+        }
+        if (actividad=="Descubre"){
+            val intento = Descubrimiento.nuevaInstancia(this)
             ejecutarActividad.launch(intento)
         }
     }

@@ -83,5 +83,22 @@ class Inicio : AppCompatActivity() {
         }
     }
 
+    fun redireccionDescubre(unBoton: View){
+        actividadRegreso = "Descubre"
+        val datos = intent.apply {
+            putExtra("Actividad", actividadRegreso)
+        }
+        setResult(Activity.RESULT_OK,datos)
+        finish()
+    }
+
+    fun redireccionAvance(unBoton: View){
+        actividadRegreso = "Progreso"
+        val datos = intent.apply {
+            putExtra("Actividad", actividadRegreso)
+        }
+        setResult(Activity.RESULT_OK,datos)
+        finish()
+    }
 
 }

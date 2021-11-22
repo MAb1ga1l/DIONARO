@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azul"
+    tools:context=".Descubrimiento.Descubrimiento">
+
+    <TextView
+        android:id="@+id/textViewTituloBusqueda2"
+        style="@style/TituloBlanco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/tituloDescubre"
+        app:layout_constraintBottom_toTopOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout7"
+        android:layout_width="66dp"
+        android:layout_height="match_parent"
+        android:background="@color/naranja"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="1dp">
+
+        <ImageButton
+            android:id="@+id/botonHomeNotas3"
+            style="@style/BotonIconoBlancoSecundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@string/todo"
+            android:onClick="regresarInicio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icons8_home_24"
+            tools:ignore="DuplicateSpeakableTextCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml,ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView7"
+            style="@style/TituloBlanco"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:rotation="90"
+            android:text="@string/textoMaterialVideo"
+            app:layout_constraintBottom_toTopOf="@+id/textView8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/botonHomeNotas3"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView8"
+            style="@style/TituloBlanco"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:rotation="90"
+            android:text="@string/textoMaterialVideo"
+            app:layout_constraintBottom_toTopOf="@+id/textView9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView9"
+            style="@style/TituloBlanco"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:rotation="90"
+            android:text="@string/textoMaterialVideo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            tools:ignore="TextContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="343dp"
+        android:layout_height="609dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloBusqueda2">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

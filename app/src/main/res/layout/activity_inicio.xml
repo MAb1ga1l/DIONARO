@@ -14,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
+        android:onClick="redireccionAvance"
         android:text="@string/tituloProgreso"
         app:layout_constraintBottom_toTopOf="@+id/subtituloInicioProgreso"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,6 +57,7 @@
         android:layout_width="84dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
+        android:onClick="redireccionAvance"
         android:text="@string/subtituloProgreso"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayoutProgreso"
         app:layout_constraintEnd_toStartOf="@+id/butonIzquierdaInicioProgreso"
@@ -102,13 +104,14 @@
         android:layout_width="84dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
+        android:onClick="redireccionDescubre"
         android:text="@string/SubtituloAprende"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayoutDescubre"
         app:layout_constraintEnd_toStartOf="@+id/butonIzquierdaInicioDescubre"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tituloInicioDescubre"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/butonDerechaInicioDescubre"
@@ -143,13 +146,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
+        android:onClick="redireccionDescubre"
         android:text="@string/tituloDescubre"
         app:layout_constraintBottom_toTopOf="@+id/subtituloInicioAprende"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonInicoTemas"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutDescubre"
