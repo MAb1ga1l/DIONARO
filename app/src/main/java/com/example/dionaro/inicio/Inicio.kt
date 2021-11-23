@@ -74,8 +74,7 @@ class Inicio : AppCompatActivity() {
         dialog.show(supportFragmentManager, "DialogoBusqueda")
     }
 
-    @Suppress("UNUSED_PARAMETER")
-    fun redireccionBusqueda(flag: Boolean, texto : String){
+    private fun redireccionBusqueda(flag: Boolean, texto : String){
         if (flag){
             actividadRegreso = "Busqueda"
             val datos = intent.apply {
@@ -85,6 +84,14 @@ class Inicio : AppCompatActivity() {
             setResult(Activity.RESULT_OK,datos)
             finish()
         }
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun busquedaPorTema(unBoton: View){
+        val dialog = DialogoFragmentTemas { flag, texto ->
+            redireccionBusqueda(flag,texto)
+        }
+        dialog.show(supportFragmentManager, "DialogoBusqueda")
     }
 
     @Suppress("UNUSED_PARAMETER")

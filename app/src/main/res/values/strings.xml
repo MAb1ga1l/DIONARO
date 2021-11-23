@@ -35,5 +35,6 @@
     <string name="textoBotonCancelar">Cancelar</string>
     <string name="tituloBuscado">Buscado</string>
     <string name="textoMaterialVideo">Videos</string>
+    <string name="tituloTemas">Temas</string>
 
 </resources>
