@@ -6,6 +6,7 @@
         <ignore path="src/main/res/drawable/icons8_emergency_exit_24.png" />
         <ignore path="src/main/res/drawable/icons8_heart_30.png" />
         <ignore path="src/main/res/drawable/icons8_home_24.png" />
+        <ignore path="src/main/res/drawable/icons8_internet_30.png" />
         <ignore path="src/main/res/drawable/icons8_menu_vertical_24.png" />
         <ignore path="src/main/res/drawable/icons8_note_24.png" />
         <ignore path="src/main/res/drawable/icons8_person_30.png" />

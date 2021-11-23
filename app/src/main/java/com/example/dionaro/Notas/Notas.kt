@@ -22,6 +22,7 @@ class Notas : AppCompatActivity() {
         }
     }
 
+    //función para regresar a la pantalla de inicio
     @Suppress("UNUSED_PARAMETER")
     fun regresarInicio(view: View){
         val accion = "RegresoHome"

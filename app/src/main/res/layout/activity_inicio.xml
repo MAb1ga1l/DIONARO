@@ -174,7 +174,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout="@layout/fragment_tarjeta_descubre" />
+            tools:layout="@layout/fragment_tarjeta_descubre"
+            tools:ignore="UsingOnClickInXml" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -196,7 +197,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout="@layout/fragment_tarjeta_progreso" />
+            tools:layout="@layout/fragment_tarjeta_progreso"
+            tools:ignore="UsingOnClickInXml" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
