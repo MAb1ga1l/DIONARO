@@ -41,7 +41,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <RadioGroup
         android:id="@+id/gurpoTemas"
@@ -58,55 +59,55 @@
             style="@style/RadioButtonTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tema A" />
+            android:text="@string/Tema1" />
 
         <RadioButton
             style="@style/RadioButtonTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tema B" />
+            android:text="@string/Tema2" />
 
         <RadioButton
             style="@style/RadioButtonTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tema C" />
+            android:text="@string/Tema3" />
 
         <RadioButton
             style="@style/RadioButtonTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tema D" />
+            android:text="@string/Tema4" />
 
         <RadioButton
             style="@style/RadioButtonTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tema E" />
+            android:text="@string/Tema5" />
 
         <RadioButton
             style="@style/RadioButtonTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tema F" />
+            android:text="@string/Tema6" />
 
         <RadioButton
             style="@style/RadioButtonTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tema G" />
+            android:text="@string/Tema7" />
 
         <RadioButton
             style="@style/RadioButtonTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tema H" />
+            android:text="@string/Tema8" />
 
         <RadioButton
             style="@style/RadioButtonTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tema I" />
+            android:text="@string/Tema9" />
 
     </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

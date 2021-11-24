@@ -36,5 +36,14 @@
     <string name="tituloBuscado">Buscado</string>
     <string name="textoMaterialVideo">Videos</string>
     <string name="tituloTemas">Temas</string>
+    <string name="Tema1">inversión</string>
+    <string name="Tema2">credito</string>
+    <string name="Tema3">seguros</string>
+    <string name="Tema4">presupuesto</string>
+    <string name="Tema5">gastos</string>
+    <string name="Tema6">ingresos</string>
+    <string name="Tema7">deudas</string>
+    <string name="Tema8">jubilación</string>
+    <string name="Tema9">ahorro</string>
 
 </resources>
