@@ -3,13 +3,13 @@ package com.example.dionaro.DataMaterial
 import android.os.Parcel
 import android.os.Parcelable
 
-class Apps(): Parcelable {
+class Cursos() : Parcelable {
 
     var descripcion : String = ""
     var link : String = ""
     var linkFoto : String = ""
     var nombre : String = ""
-    var idApp : String = ""
+    var idCurso : String = ""
     var puntuacion : String = ""
 
     constructor(parcel: Parcel) : this() {
@@ -17,7 +17,7 @@ class Apps(): Parcelable {
         link = parcel.readString().toString()
         linkFoto = parcel.readString().toString()
         nombre = parcel.readString().toString()
-        idApp = parcel.readString().toString()
+        idCurso = parcel.readString().toString()
         puntuacion = parcel.readString().toString()
     }
 
@@ -26,7 +26,7 @@ class Apps(): Parcelable {
         parcel.writeString(link)
         parcel.writeString(linkFoto)
         parcel.writeString(nombre)
-        parcel.writeString(idApp)
+        parcel.writeString(idCurso)
         parcel.writeString(puntuacion)
     }
 
@@ -34,12 +34,12 @@ class Apps(): Parcelable {
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Apps> {
-        override fun createFromParcel(parcel: Parcel): Apps {
-            return Apps(parcel)
+    companion object CREATOR : Parcelable.Creator<Cursos> {
+        override fun createFromParcel(parcel: Parcel): Cursos {
+            return Cursos(parcel)
         }
 
-        override fun newArray(size: Int): Array<Apps?> {
+        override fun newArray(size: Int): Array<Cursos?> {
             return arrayOfNulls(size)
         }
     }

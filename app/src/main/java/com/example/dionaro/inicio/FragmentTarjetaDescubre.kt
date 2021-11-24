@@ -1,20 +1,15 @@
 package com.example.dionaro.inicio
 
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import com.example.dionaro.R
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
-import java.lang.System.load
-import java.net.URL
 
 private const val ARG_PARAM1 = "nombre"
 private const val ARG_PARAM2 = "foto"

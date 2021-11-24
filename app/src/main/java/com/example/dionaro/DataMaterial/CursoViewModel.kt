@@ -1,0 +1,40 @@
+package com.example.dionaro.DataMaterial
+
+import android.view.View
+import androidx.lifecycle.ViewModel
+
+class CursoViewModel : ViewModel(){
+
+    val cursosRegistrados = mutableListOf<Cursos>()
+    private val descripciones = arrayOf("Cambia tu mentalidad y comienza a pensar. Sana tu relación con el " +
+            "dinero aprendiendo a organizar tus finanzas personales",
+    "Entiende cuál es tu perfil de riesgo y aprende a realizar análisis fundamental, técnico y económico para tomar decisiones de inversión.",
+    "Aprende a usar las herramientas básicas para controlar tus finanzas personales.",
+    "Aprende a manejar tus finanzas personales y organiza tus ingresos y gastos para optimizar tu dinero y sacarle un mayor rendimiento")
+    private val links = arrayOf("https://www.udemy.com/course/curso-de-finanzas-personales/?utm_source=adwords&utm_medium=udemyads&utm_campaign=LongTail_la.ES_cc.MX&utm_term=_._ag_124493948387_._ad_517970074742_._kw__._de_c_._dm__._pl__._ti_dsa-1231786816213_._li_1010097_._pd__._&matchtype=&gclid=CjwKCAiAnO2MBhApEiwA8q0HYSOXGGZ0f8wC19mFc5rFAF_2STyliLYLx0vzwD4IopCciQMTMwu-BBoCbIIQAvD_BwE",
+    "https://www.crehana.com/mx/cursos-online-emprendimiento/trading-como-invertir-en-bolsa/",
+    "https://www.udemy.com/course/finanzas-personales-para-principiantes/",
+    "https://www.crehana.com/mx/cursos-online-ventas/introduccion-a-las-finanzas/?utm_source=google&utm_medium=cpc&utm_campaign=search-non-brand&utm_content=sale-payg&utm_term=cursos&gclid=CjwKCAiAnO2MBhApEiwA8q0HYZedtt2UQSGZY_EAtnwG1oHWuf960SCpUSG516ASMNd_pTFR8EiJHxoCEsYQAvD_BwE")
+    private val linksFoto = arrayOf("data:image/png;base64,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",
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAWlBMVEVLIvT////49/87APNCEPQ/BvS5rvpFF/SAa/efkfje2f1YNvVJHvTx7/7g2/3+/f97Zfbr5/7Ty/y/tvomAPO1qfpUMPSGcvfZ0/zLwvvj3/2cjfiPffeilPh4h2BhAAABaklEQVR4nO3cy1LCQBRFUSDBIGKIig9E//83nTnLqXJy7cBa81PVG2bpSlYrAAAAAAAAAAAAAAAAAADgjw7Jfx/uVxfF6WHo5w2tJHZPj8FzSty+rJP869TpNumUYyy8S9PNMgr3ChU2QGGYKixryBSGqcKyhkxhmCosa8gUhqnCsoZMYZgqLGvIFIapwrKGTGGYKixryG698CqeeadTrsdTuLU5vS6i8PAQvL0fN8FxEYXxDrDfxX84aqcwGRQqbJ5Che1TqLB9ChW2T6HC9ilU2D6FCtunUGH7FC6jML4yM11B4fZj3M8az9Nu3nReRGEXL5DGbpjXLeT+8MbvgBUqbIHCMFVY1pApDFOFZQ2ZwjBVWNaQKQxThWUNmcIwVVjWkCkMU4VlDZnCMFVY1pDdQGF8qv8ZC+O3vo6tFA6X++BrSNPpO0wvaVoqfFSu7/Mp0wfp+r7o/AAAAAAAAAAAAAAAAAAA0JgfAPcrbdegxfYAAAAASUVORK5CYII=",
+    "data:image/png;base64,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",
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAWlBMVEVLIvT////49/87APNCEPQ/BvS5rvpFF/SAa/efkfje2f1YNvVJHvTx7/7g2/3+/f97Zfbr5/7Ty/y/tvomAPO1qfpUMPSGcvfZ0/zLwvvj3/2cjfiPffeilPh4h2BhAAABaklEQVR4nO3cy1LCQBRFUSDBIGKIig9E//83nTnLqXJy7cBa81PVG2bpSlYrAAAAAAAAAAAAAAAAAADgjw7Jfx/uVxfF6WHo5w2tJHZPj8FzSty+rJP869TpNumUYyy8S9PNMgr3ChU2QGGYKixryBSGqcKyhkxhmCosa8gUhqnCsoZMYZgqLGvIFIapwrKGTGGYKixryG698CqeeadTrsdTuLU5vS6i8PAQvL0fN8FxEYXxDrDfxX84aqcwGRQqbJ5Che1TqLB9ChW2T6HC9ilU2D6FCtunUGH7FC6jML4yM11B4fZj3M8az9Nu3nReRGEXL5DGbpjXLeT+8MbvgBUqbIHCMFVY1pApDFOFZQ2ZwjBVWNaQKQxThWUNmcIwVVjWkCkMU4VlDZnCMFVY1pDdQGF8qv8ZC+O3vo6tFA6X++BrSNPpO0wvaVoqfFSu7/Mp0wfp+r7o/AAAAAAAAAAAAAAAAAAA0JgfAPcrbdegxfYAAAAASUVORK5CYII=")
+    private val nombres = arrayOf("Curso de Finanzas Personales","¿Cómo invertir en bolsa?",
+    "Finanzas Personales para Principiantes","Curso online de Introducción a las finanzas")
+    private val valoraciones = arrayOf("4","4.8","4.4","4.2")
+    private val idsCursos = arrayOf("Curso1","Curso2","Curso3","Curso4")
+
+    init {
+        for (i in 0 until 3){
+            val curso = Cursos()
+            curso.idCurso = idsCursos[i]
+            curso.nombre = nombres[i]
+            curso.linkFoto = linksFoto[i]
+            curso.link = links[i]
+            curso.descripcion = descripciones[i]
+            curso.puntuacion = valoraciones[i]
+            cursosRegistrados += curso
+        }
+    }
+
+}
