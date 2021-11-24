@@ -17,7 +17,6 @@
     <string name="textoNotaRecordatorio"> Nota del recordatorio</string>
     <string name="textoHoraRecordatorio">hh : mm</string>
     <string name="tituloNotas">Notas</string>
-    <string name="textoBotonTema">TEMA</string>
     <string name="subtituloAvancesFavoritos">Filtra por tema</string>
     <string name="subtituloMaterial">Material</string>
     <!-- TODO: Remove or change this placeholder text -->

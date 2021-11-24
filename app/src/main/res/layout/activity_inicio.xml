@@ -121,6 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/todo"
+        android:onClick="cambioDataTarjetaDescubreDerecha"
         app:layout_constraintBottom_toBottomOf="@+id/butonIzquierdaInicioDescubre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/butonIzquierdaInicioDescubre"
@@ -135,6 +136,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="29dp"
         android:contentDescription="@string/todo"
+        android:onClick="cambioDataTarjetaDescubreIzquierda"
         app:layout_constraintBottom_toBottomOf="@+id/subtituloInicioAprende"
         app:layout_constraintEnd_toStartOf="@+id/butonDerechaInicioDescubre"
         app:layout_constraintTop_toTopOf="@+id/subtituloInicioAprende"
@@ -166,16 +168,16 @@
         app:layout_constraintTop_toBottomOf="@+id/subtituloInicioAprende">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView"
+            android:id="@+id/fragmentContainerViewDescubre"
             android:name="com.example.dionaro.inicio.FragmentTarjetaDescubre"
             style="@style/TarjetaMorada"
-            android:onClick="redireccionMaterial"
+            android:onClick="redireccionFueraApp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout="@layout/fragment_tarjeta_descubre"
-            tools:ignore="UsingOnClickInXml" />
+            tools:ignore="UsingOnClickInXml"
+            tools:layout="@layout/fragment_tarjeta_descubre" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

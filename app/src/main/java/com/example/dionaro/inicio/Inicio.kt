@@ -3,18 +3,29 @@ package com.example.dionaro.inicio
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.example.dionaro.DataMaterial.appsViewModel
 import com.example.dionaro.R
 
 class Inicio : AppCompatActivity() {
 
     private var actividadRegreso = ""
+    private val dataAppViewModel : appsViewModel by lazy {
+        ViewModelProvider(this).get(appsViewModel::class.java)
+    }
+    private var posicionDescubre : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
+        //val fragmentoTarjetaDescubre = supportFragmentManager.findFragmentById(R.id.fragmentContainerViewDescubre)
+        val app = dataAppViewModel.appsRegitradas[posicionDescubre]
+        val tarjetaDescubre = FragmentTarjetaDescubre.newInstance(app.nombre,app.linkFoto,app.descripcion,app.puntuacion)
+        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerViewDescubre, tarjetaDescubre).commit()
     }
 
     companion object {
@@ -124,4 +135,43 @@ class Inicio : AppCompatActivity() {
         finish()
     }
 
+    //Función para redireccionar a la plystore o a la página correspondiente
+    @Suppress("UNUSED_PARAMETER")
+    fun redireccionFueraApp(unBoton: View){
+        val app = dataAppViewModel.appsRegitradas[posicionDescubre]
+        val url = app.link
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun cambioDataTarjetaDescubreDerecha(unBoton: View){
+        if (posicionDescubre == -1){
+            posicionDescubre =0
+        }
+        posicionDescubre += 1
+        if(posicionDescubre <= 2){
+            val app = dataAppViewModel.appsRegitradas[posicionDescubre]
+            val tarjetaDescubre = FragmentTarjetaDescubre.newInstance(app.nombre,app.linkFoto,app.descripcion,app.puntuacion)
+            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewDescubre, tarjetaDescubre).commit()
+        }else{
+            posicionDescubre=3
+        }
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun cambioDataTarjetaDescubreIzquierda(unBoton: View){
+        if (posicionDescubre == 3){
+            posicionDescubre = 2
+        }
+        posicionDescubre -= 1
+        if(posicionDescubre >= 0){
+            val app = dataAppViewModel.appsRegitradas[posicionDescubre]
+            val tarjetaDescubre = FragmentTarjetaDescubre.newInstance(app.nombre,app.linkFoto,app.descripcion,app.puntuacion)
+            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewDescubre, tarjetaDescubre).commit()
+        }else{
+            posicionDescubre=-1
+        }
+    }
 }
