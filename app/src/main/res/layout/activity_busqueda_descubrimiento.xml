@@ -58,20 +58,6 @@
             tools:ignore="DuplicateSpeakableTextCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml,ImageContrastCheck" />
 
         <TextView
-            android:id="@+id/textViewAppsDescubre"
-            style="@style/TituloBlanco"
-            android:layout_width="66dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:rotation="90"
-            android:text="@string/textoMaterialVideo"
-            app:layout_constraintBottom_toTopOf="@+id/textViewCursosDescubre"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/botonHomeNotas3"
-            tools:ignore="TextContrastCheck" />
-
-        <TextView
             android:id="@+id/textViewCursosDescubre"
             style="@style/TituloBlanco"
             android:layout_width="66dp"
@@ -79,8 +65,10 @@
             android:rotation="90"
             android:text="@string/textoMaterialVideo"
             app:layout_constraintBottom_toTopOf="@+id/textViewSoftDescubre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewAppsDescubre"
+            app:layout_constraintTop_toBottomOf="@+id/botonHomeNotas3"
             tools:ignore="TextContrastCheck" />
 
         <TextView
@@ -89,9 +77,10 @@
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:rotation="90"
-            android:text="@string/textoMaterialVideo"
+            android:text="@string/textoMaterialArtículos"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewCursosDescubre"
             tools:ignore="TextContrastCheck" />
