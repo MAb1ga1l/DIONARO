@@ -14,7 +14,7 @@
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.170703125" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.14924863387978143" />
         <entry key="app/src/main/res/layout/activity_avances_favoritos.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_busqueda_descubrimiento.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_busqueda_descubrimiento.xml" value="0.25165562913907286" />
         <entry key="app/src/main/res/layout/activity_descubrimiento.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_informacion.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_inicio.xml" value="0.45" />
@@ -27,7 +27,7 @@
         <entry key="app/src/main/res/layout/dialog_fragment_temas.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_dialog_busqueda.xml" value="0.23233695652173914" />
         <entry key="app/src/main/res/layout/fragment_lista_materiales.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/fragment_lista_tarjetas_busqueda.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/fragment_lista_tarjetas_busqueda.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_lista_tarjetas_descubre.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_recordatorios_por_dia.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_tarjeta_descubre.xml" value="0.375" />

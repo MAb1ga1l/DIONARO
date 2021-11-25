@@ -23,8 +23,8 @@ class Descubrimiento : AppCompatActivity() {
         val fragmentoTarjetas = ListaTarjetasDescubre.newInstance(seccionBusqueda)
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainerViewListaDescubrimiento, fragmentoTarjetas).commit()
         textoApps = findViewById(R.id.textViewAppsDescubre)
-        textoCursos = findViewById(R.id.textViewCursosDescubre)
-        textoSoft = findViewById(R.id.textViewSoftDescubre)
+        textoCursos = findViewById(R.id.textViewVideosBusqueda)
+        textoSoft = findViewById(R.id.textViewDocsBusqueda)
         ajusteColoresText()
     }
     companion object{

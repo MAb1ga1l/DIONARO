@@ -2,40 +2,12 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/TarjetaMorada"
-    android:background="@drawable/rounded_shape"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".BusquedaDescubrimiento.listaTarjetasBusqueda">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewBusqueda"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/textoTarjetaMaterialBusqueda"
-            style="@style/TextoBlanco"
-            android:layout_width="250dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/textoAleatorio"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tituloTarjetaMaterialBusqueda"
-            tools:ignore="TextContrastCheck" />
-
-        <TextView
-            android:id="@+id/tituloTarjetaMaterialBusqueda"
-            style="@style/SubtituloBlanco"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/subtituloMaterial"
-            app:layout_constraintBottom_toTopOf="@+id/textoTarjetaMaterialBusqueda"
-            app:layout_constraintEnd_toEndOf="@+id/textoTarjetaMaterialBusqueda"
-            app:layout_constraintStart_toStartOf="@+id/textoTarjetaMaterialBusqueda"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TextContrastCheck" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent" />
 </FrameLayout>
