@@ -1,3 +1,5 @@
+@file:Suppress("ClassName")
+
 package com.example.dionaro.DataMaterial
 
 import androidx.lifecycle.ViewModel

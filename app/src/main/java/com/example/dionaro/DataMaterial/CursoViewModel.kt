@@ -1,6 +1,5 @@
 package com.example.dionaro.DataMaterial
 
-import android.view.View
 import androidx.lifecycle.ViewModel
 
 class CursoViewModel : ViewModel(){

@@ -24,14 +24,7 @@ class ListaTarjetasDescubre : Fragment() {
     private lateinit var tarjetasDescubreRecyclerView: RecyclerView
     private var adaptador : TarjetaAdapter? = null
     private var param1: String? = null
-    private var callbackinterfaz : InterfazTarjetas? = null
 
-    interface InterfazTarjetas{
-        //fun onCosasSeleccionada(unaCosa : Cosa)
-        fun onAppSeleccionada(app:Apps)
-        fun onCursoSeleccionada(curso: Cursos)
-        fun onSoftSeleccionada(software: Softwares)
-    }
     private val dataAppViewModel : appsViewModel by lazy {
         ViewModelProvider(this).get(appsViewModel::class.java)
     }
@@ -71,7 +64,7 @@ class ListaTarjetasDescubre : Fragment() {
             }
     }
 
-    private inner class TarjetaAdapter(): RecyclerView.Adapter<TarjetaHolder>(){
+    private inner class TarjetaAdapter : RecyclerView.Adapter<TarjetaHolder>(){
         val inventarioApps = dataAppViewModel.appsRegitradas
         val inventarioCursos = dataCursosViewModel.cursosRegistrados
         val inventarioSoftware = dataSoftwareViewModel.softwaresRegistrados
@@ -145,16 +138,15 @@ class ListaTarjetasDescubre : Fragment() {
         }
 
         override fun onClick(v: View?) {
-            var url =""
-            when (param1) {
+            val url = when (param1) {
                 "Apps" -> {
-                    url = apps.link
+                    apps.link
                 }
                 "Cursos" -> {
-                    url = curso.link
+                    curso.link
                 }
                 else -> {
-                    url = softwares.link
+                    softwares.link
                 }
             }
             val intent = Intent(Intent.ACTION_VIEW)

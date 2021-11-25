@@ -1,6 +1,5 @@
 package com.example.dionaro.Descubrimiento
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -63,13 +62,13 @@ class Descubrimiento : AppCompatActivity() {
         cambioFragment()
     }
 
-    fun cambioFragment(){
+    private fun cambioFragment(){
         val fragmentoTarjetas = ListaTarjetasDescubre.newInstance(seccionBusqueda)
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainerViewListaDescubrimiento, fragmentoTarjetas).commit()
         ajusteColoresText()
     }
 
-    fun ajusteColoresText(){
+    private fun ajusteColoresText(){
         when (seccionBusqueda) {
             "Apps" -> {
                 textoApps.setTextColor(Color.parseColor("#4e93e6"))

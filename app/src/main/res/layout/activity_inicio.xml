@@ -127,7 +127,7 @@
         app:layout_constraintTop_toTopOf="@+id/butonIzquierdaInicioDescubre"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/icons8_chevron_right_30"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+        tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <ImageButton
         android:id="@+id/butonIzquierdaInicioDescubre"
@@ -141,7 +141,7 @@
         app:layout_constraintEnd_toStartOf="@+id/butonDerechaInicioDescubre"
         app:layout_constraintTop_toTopOf="@+id/subtituloInicioAprende"
         app:srcCompat="@drawable/icons8_chevron_left_30"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+        tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <TextView
         android:id="@+id/tituloInicioDescubre"
