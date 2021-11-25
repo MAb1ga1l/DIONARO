@@ -58,33 +58,33 @@
             tools:ignore="DuplicateSpeakableTextCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml,ImageContrastCheck" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/textViewAppsDescubre"
             style="@style/TituloBlanco"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:rotation="90"
             android:text="@string/textoMaterialVideo"
-            app:layout_constraintBottom_toTopOf="@+id/textView8"
+            app:layout_constraintBottom_toTopOf="@+id/textViewCursosDescubre"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/botonHomeNotas3"
             tools:ignore="TextContrastCheck" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/textViewCursosDescubre"
             style="@style/TituloBlanco"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:rotation="90"
             android:text="@string/textoMaterialVideo"
-            app:layout_constraintBottom_toTopOf="@+id/textView9"
+            app:layout_constraintBottom_toTopOf="@+id/textViewSoftDescubre"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAppsDescubre"
             tools:ignore="TextContrastCheck" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/textViewSoftDescubre"
             style="@style/TituloBlanco"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCursosDescubre"
             tools:ignore="TextContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

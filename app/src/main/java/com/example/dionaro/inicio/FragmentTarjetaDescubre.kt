@@ -45,16 +45,16 @@ class FragmentTarjetaDescubre : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val vista = inflater.inflate(R.layout.fragment_tarjeta_descubre, container, false)
-        titulo = vista.findViewById(R.id.tituloTarjetaDescubreInicio)
+        titulo = vista.findViewById(R.id.tituloTarjetaDescubreDes)
         titulo.text = param1
-        logo = vista.findViewById(R.id.logoMaterialTarjetaInicio)
+        logo = vista.findViewById(R.id.logoMaterialTarjetaDescubre)
         Picasso.get().load(param2).into(logo)
-        puntuacion = vista.findViewById(R.id.ratingBarTarjetaInicio)
+        puntuacion = vista.findViewById(R.id.ratingBarTarjetaDescubre)
         val newNum = param4?.toFloat()
         if (newNum != null) {
             puntuacion.rating = newNum
         }
-        descripcion = vista.findViewById(R.id.textoTarjetaDescubreInicio)
+        descripcion = vista.findViewById(R.id.textoTarjetaDescubreDes)
         descripcion.text = param3
         return vista
     }

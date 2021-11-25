@@ -44,5 +44,11 @@
     <string name="Tema7">deudas</string>
     <string name="Tema8">jubilación</string>
     <string name="Tema9">ahorro</string>
+    <string name="textoMaterialApps">Apps</string>
+    <string name="textoMaterialCursos">Cursos</string>
+    <string name="textoMaterialSoftwares">Progra</string>
+    <string name="textoMaterialTodo">Todo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

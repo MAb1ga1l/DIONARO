@@ -1,17 +1,32 @@
 package com.example.dionaro.Descubrimiento
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.R
 
 class Descubrimiento : AppCompatActivity() {
+
+    private var seccionBusqueda = "Apps"
+    private lateinit var textoApps : TextView
+    private lateinit var textoCursos : TextView
+    private lateinit var textoSoft : TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_descubrimiento)
+        val fragmentoTarjetas = ListaTarjetasDescubre.newInstance(seccionBusqueda)
+        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerViewListaDescubrimiento, fragmentoTarjetas).commit()
+        textoApps = findViewById(R.id.textViewAppsDescubre)
+        textoCursos = findViewById(R.id.textViewCursosDescubre)
+        textoSoft = findViewById(R.id.textViewSoftDescubre)
+        ajusteColoresText()
     }
     companion object{
         fun nuevaInstancia(contexto : Context) : Intent {
@@ -30,5 +45,47 @@ class Descubrimiento : AppCompatActivity() {
         }
         setResult(Activity.RESULT_OK,datos)
         finish()
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun cambioCursos(view: View){
+        seccionBusqueda = "Cursos"
+        cambioFragment()
+    }
+    @Suppress("UNUSED_PARAMETER")
+    fun cambioApps(view: View){
+        seccionBusqueda = "Apps"
+        cambioFragment()
+    }
+    @Suppress("UNUSED_PARAMETER")
+    fun cambioProgra(view: View){
+        seccionBusqueda = "Soft"
+        cambioFragment()
+    }
+
+    fun cambioFragment(){
+        val fragmentoTarjetas = ListaTarjetasDescubre.newInstance(seccionBusqueda)
+        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerViewListaDescubrimiento, fragmentoTarjetas).commit()
+        ajusteColoresText()
+    }
+
+    fun ajusteColoresText(){
+        when (seccionBusqueda) {
+            "Apps" -> {
+                textoApps.setTextColor(Color.parseColor("#4e93e6"))
+                textoSoft.setTextColor(Color.parseColor("#FFFFFFFF"))
+                textoCursos.setTextColor(Color.parseColor("#FFFFFFFF"))
+            }
+            "Cursos" -> {
+                textoApps.setTextColor(Color.parseColor("#FFFFFFFF"))
+                textoSoft.setTextColor(Color.parseColor("#FFFFFFFF"))
+                textoCursos.setTextColor(Color.parseColor("#4e93e6"))
+            }
+            else -> {
+                textoApps.setTextColor(Color.parseColor("#FFFFFFFF"))
+                textoSoft.setTextColor(Color.parseColor("#4e93e6"))
+                textoCursos.setTextColor(Color.parseColor("#FFFFFFFF"))
+            }
+        }
     }
 }
