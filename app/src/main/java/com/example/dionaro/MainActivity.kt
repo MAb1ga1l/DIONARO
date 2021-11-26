@@ -20,11 +20,15 @@ class MainActivity : AppCompatActivity() {
         val datos : Intent? = respuesta.data
         val actividad = datos?.getStringExtra("Actividad")
         var textoExtra = datos?.getStringExtra("Data")
+        var tipoBusqueda = datos?.getStringExtra("TipoBusqueda")
         if (textoExtra == null){
             textoExtra = ""
         }
+        if (tipoBusqueda ==null){
+            tipoBusqueda = ""
+        }
         if (actividad != null) {
-            cambioActividad(actividad,textoExtra)
+            cambioActividad(actividad,textoExtra,tipoBusqueda)
         }
     }
     private var ejecutarActividad = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
@@ -45,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun cambioActividad(actividad:String,textoExtra : String){
+    private fun cambioActividad(actividad:String,textoExtra : String,tipoBusqueda:String){
         if (actividad=="Recordatorios"){
             val intento = Recordatorios.nuevaInstancia(this)
             ejecutarActividad.launch(intento)
@@ -63,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             ejecutarActividad.launch(intento)
         }
         if (actividad=="Busqueda"){
-            val intento = BusquedaDescubrimiento.nuevaInstancia(this, textoExtra)
+            val intento = BusquedaDescubrimiento.nuevaInstancia(this, textoExtra,tipoBusqueda)
             ejecutarActividad.launch(intento)
         }
         if (actividad=="Descubre"){

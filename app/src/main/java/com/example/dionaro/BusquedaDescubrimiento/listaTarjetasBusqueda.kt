@@ -1,16 +1,20 @@
+@file:Suppress("ClassName")
+
 package com.example.dionaro.BusquedaDescubrimiento
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dionaro.AvanceFavoritos.ListaMateriales
-import com.example.dionaro.DataMaterial.*
+import com.example.dionaro.DataMaterial.Articulos
+import com.example.dionaro.DataMaterial.ArticulosViewModel
+import com.example.dionaro.DataMaterial.Videos
+import com.example.dionaro.DataMaterial.VideosViewModel
 import com.example.dionaro.R
 
 private const val ARG_PARAM1 = "textoBusqueda"
@@ -52,14 +56,23 @@ class listaTarjetasBusqueda : Fragment() {
         tarjetaBusquedaRecyclerView.layoutManager = LinearLayoutManager(context)
         if(param2=="Videos"){
             val inventario = dataVideosViewModel.videosRegistrados
-            adaptadorVideos = TarjetaAdapterVideo(inventario)
+            adaptadorVideos = if(param3 == "Tema"){
+                val inventarioFiltrado = filtrarVideosPorTema(inventario)
+                TarjetaAdapterVideo(inventarioFiltrado)
+            }else{
+                TarjetaAdapterVideo(inventario)
+            }
             tarjetaBusquedaRecyclerView.adapter = adaptadorVideos
         }else{
             val inventario = dataDocsViewModel.articulosRegistrados
-            adaptadorDoc = TarjetaAdapterDoc(inventario)
+            adaptadorDoc = if (param3 == "Tema"){
+                val inventarioFiltrado = filtrarArticulosPorTema(inventario)
+                TarjetaAdapterDoc(inventarioFiltrado)
+            }else{
+                TarjetaAdapterDoc(inventario)
+            }
             tarjetaBusquedaRecyclerView.adapter=adaptadorDoc
         }
-
         return vista
     }
 
@@ -72,6 +85,26 @@ class listaTarjetasBusqueda : Fragment() {
                     putString(ARG_PARAM3, param3)
                 }
             }
+    }
+
+    private fun filtrarVideosPorTema(inventario: List<Videos>): List<Videos>{
+        val nuevoInventario = mutableListOf<Videos>()
+        for (video in inventario){
+            if(video.tema == param1) {
+                nuevoInventario += video
+            }
+        }
+        return nuevoInventario
+    }
+
+    private fun filtrarArticulosPorTema(inventario: List<Articulos>): List<Articulos>{
+        val nuevoInventario = mutableListOf<Articulos>()
+        for (doc in inventario){
+            if(doc.tema == param1) {
+                nuevoInventario += doc
+            }
+        }
+        return nuevoInventario
     }
 
     private inner class TarjetaAdapterVideo(var inventario: List<Videos>): RecyclerView.Adapter<TarjetaHolder>(){

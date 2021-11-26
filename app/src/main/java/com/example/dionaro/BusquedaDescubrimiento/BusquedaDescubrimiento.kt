@@ -7,6 +7,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.SearchView
 import android.widget.TextView
 import com.example.dionaro.R
 
@@ -14,14 +15,31 @@ class BusquedaDescubrimiento : AppCompatActivity() {
     private lateinit var tituloTextoBuscado : TextView
     private lateinit var textoVideos : TextView
     private lateinit var textoDocs : TextView
+    private lateinit var busqueda : SearchView
     private var seccionBusqueda = "Videos"
     private var tipoBusqueda = "Palabra"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_busqueda_descubrimiento)
+        busqueda = findViewById(R.id.searchViewBusqueda)
         tituloTextoBuscado = findViewById(R.id.textViewTituloBusqueda)
+        busqueda.setOnQueryTextListener(object  : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                busqueda.clearFocus()
+                tituloTextoBuscado.text = query
+                tipoBusqueda = "Palabra"
+                cambioFragment()
+                ajusteColoresText()
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+        })
         tituloTextoBuscado.text = intent.getStringExtra("Texto_Buscado")
+        tipoBusqueda = intent.getStringExtra("TipoBusqueda").toString()
         textoVideos = findViewById(R.id.textViewVideosBusqueda)
         textoDocs = findViewById(R.id.textViewDocsBusqueda)
         cambioFragment()
@@ -29,11 +47,12 @@ class BusquedaDescubrimiento : AppCompatActivity() {
     }
 
     companion object {
-        fun nuevaInstancia (contexto: Context,texto : String) : Intent {
+        fun nuevaInstancia (contexto: Context,texto : String,tipoBusqueda:String) : Intent {
             //De forma general aquí se le va dar el intento a quien busque ejecutarlo
             return Intent(contexto, BusquedaDescubrimiento::class.java).apply {
                 //aquí encontraremos el texto a buscar
                 putExtra("Texto_Buscado", texto)
+                putExtra("TipoBusqueda", tipoBusqueda)
             }
         }
     }
@@ -53,6 +72,8 @@ class BusquedaDescubrimiento : AppCompatActivity() {
         seccionBusqueda = "Videos"
         cambioFragment()
     }
+
+    @Suppress("UNUSED_PARAMETER")
     fun cambioDocs(view: View){
         seccionBusqueda = "Docs"
         cambioFragment()

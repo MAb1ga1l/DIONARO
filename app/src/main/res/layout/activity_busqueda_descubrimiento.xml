@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="@string/tituloBuscado"
-        app:layout_constraintBottom_toTopOf="@+id/searchView"
+        app:layout_constraintBottom_toTopOf="@+id/searchViewBusqueda"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,12 +85,12 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewVideosBusqueda"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck,UsingOnClickInXml" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/searchViewBusqueda"
         android:layout_width="269dp"
         android:layout_height="39dp"
         android:background="@drawable/rounded_shape_white"
@@ -108,7 +108,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
-        app:layout_constraintTop_toBottomOf="@+id/searchView">
+        app:layout_constraintTop_toBottomOf="@+id/searchViewBusqueda">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerViewBusqueda"

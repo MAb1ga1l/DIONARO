@@ -14,6 +14,7 @@ import com.example.dionaro.R
 class Inicio : AppCompatActivity() {
 
     private var actividadRegreso = ""
+    private var tipoDeBusqueda = ""
     private val dataAppViewModel : appsViewModel by lazy {
         ViewModelProvider(this).get(appsViewModel::class.java)
     }
@@ -66,6 +67,7 @@ class Inicio : AppCompatActivity() {
         val dialog = DialogoFragmentBusqueda { flag, texto ->
             redireccionBusqueda(flag,texto)
         }
+        tipoDeBusqueda = "Palabra"
         dialog.show(supportFragmentManager, "DialogoBusqueda")
     }
 
@@ -75,6 +77,7 @@ class Inicio : AppCompatActivity() {
             val datos = intent.apply {
                 putExtra("Actividad", actividadRegreso)
                 putExtra("Data", texto)
+                putExtra("TipoBusqueda", tipoDeBusqueda)
             }
             setResult(Activity.RESULT_OK,datos)
             finish()
@@ -86,6 +89,7 @@ class Inicio : AppCompatActivity() {
         val dialog = DialogoFragmentTemas { flag, texto ->
             redireccionBusqueda(flag,texto)
         }
+        tipoDeBusqueda = "Tema"
         dialog.show(supportFragmentManager, "DialogoBusqueda")
     }
 
