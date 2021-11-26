@@ -9,9 +9,12 @@ import android.os.Bundle
 import android.view.View
 import android.widget.SearchView
 import android.widget.TextView
+import android.widget.Toast
+import com.example.dionaro.DataMaterial.Articulos
+import com.example.dionaro.DataMaterial.Videos
 import com.example.dionaro.R
 
-class BusquedaDescubrimiento : AppCompatActivity() {
+class BusquedaDescubrimiento : AppCompatActivity() , listaTarjetasBusqueda.InterfazMateriales{
     private lateinit var tituloTextoBuscado : TextView
     private lateinit var textoVideos : TextView
     private lateinit var textoDocs : TextView
@@ -97,5 +100,29 @@ class BusquedaDescubrimiento : AppCompatActivity() {
                 textoDocs.setTextColor(Color.parseColor("#4e93e6"))
             }
         }
+    }
+
+    override fun videoSeleccionado(video: Videos) {
+        val accion = "Material"
+        val datos = intent.apply {
+            putExtra("Accion",accion)
+            putExtra("idData",video.idVideo)
+            putExtra("tipoMaterial","Video")
+        }
+        setResult(Activity.RESULT_OK,datos)
+        finish()
+        //Toast.makeText(this, "${video.nombreVideo}", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun docSeleccionado(doc: Articulos) {
+        val accion = "Material"
+        val datos = intent.apply {
+            putExtra("Accion",accion)
+            putExtra("idData",doc.idArticulo)
+            putExtra("tipoMaterial","Docs")
+        }
+        setResult(Activity.RESULT_OK,datos)
+        finish()
+        //Toast.makeText(this, "${doc.nombreArticulo}", Toast.LENGTH_SHORT).show()
     }
 }

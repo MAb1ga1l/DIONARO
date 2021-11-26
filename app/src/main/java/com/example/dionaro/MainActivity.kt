@@ -35,7 +35,16 @@ class MainActivity : AppCompatActivity() {
         respuesta ->
         val datos : Intent? = respuesta.data
         val accionARealizar = datos?.getStringExtra("Accion")
-        cambioRegresoActividad(accionARealizar)
+        var idData = datos?.getStringExtra("idData")
+        var tipoMAterial = datos?.getStringExtra("tipoMaterial")
+
+        if (idData == null){
+            idData = ""
+        }
+        if(tipoMAterial == null){
+            tipoMAterial=""
+        }
+        cambioRegresoActividad(accionARealizar,idData,tipoMAterial)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,15 +84,19 @@ class MainActivity : AppCompatActivity() {
             ejecutarActividad.launch(intento)
         }
         if (actividad=="Material"){
-            val intento = Informacion.nuevaInstancia(this)
-            ejecutarActividad.launch(intento)
+            //val intento = Informacion.nuevaInstancia(this)
+            //ejecutarActividad.launch(intento)
         }
     }
 
-    private fun cambioRegresoActividad(accionARealizar: String?) {
+    private fun cambioRegresoActividad(accionARealizar: String?, idData : String,tipoMaterial : String) {
         if(accionARealizar == "RegresoHome"){
             val intento = Inicio.nuevaInstancia(this)
             ejecutaInicio.launch(intento)
+        }
+        if (accionARealizar=="Material"){
+            val intento = Informacion.nuevaInstancia(this,idData,tipoMaterial)
+            ejecutarActividad.launch(intento)
         }
     }
 

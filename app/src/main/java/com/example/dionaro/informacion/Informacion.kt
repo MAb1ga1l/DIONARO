@@ -5,20 +5,27 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.R
 
+
 class Informacion : AppCompatActivity() {
+    private lateinit var tituloMaterial : TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_informacion)
+        tituloMaterial = findViewById(R.id.textViewTituloMaterial)
+        tituloMaterial.text = intent.getStringExtra("tipoMaterial")
     }
 
     companion object{
-        fun nuevaInstancia(contexto : Context) : Intent {
+        fun nuevaInstancia(contexto : Context,idMaterial:String,tipoMaterial:String) : Intent {
             return Intent(contexto, Informacion::class.java).apply {
                 //Aquí se recibira
-                //el titulo de la actividad en caso de entrar a la pantalla de favoritos o avances
+                putExtra("idMaterial",idMaterial)
+                putExtra("tipoMaterial",tipoMaterial)
             }
         }
     }

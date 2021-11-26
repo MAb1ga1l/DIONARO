@@ -2,6 +2,7 @@
 
 package com.example.dionaro.BusquedaDescubrimiento
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +26,7 @@ class listaTarjetasBusqueda : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var param3: String? = null
+    private var callbackinterfaz : InterfazMateriales? = null
 
     private lateinit var tarjetaBusquedaRecyclerView: RecyclerView
     private var adaptadorVideos : TarjetaAdapterVideo? = null
@@ -35,6 +37,21 @@ class listaTarjetasBusqueda : Fragment() {
     }
     private val dataDocsViewModel : ArticulosViewModel by lazy {
         ViewModelProvider(this).get(ArticulosViewModel::class.java)
+    }
+
+    interface InterfazMateriales{
+        fun videoSeleccionado(video:Videos)
+        fun docSeleccionado(doc : Articulos)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callbackinterfaz = context as InterfazMateriales?
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        callbackinterfaz = null
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -127,13 +144,19 @@ class listaTarjetasBusqueda : Fragment() {
     private inner class TarjetaHolder(vista : View) : RecyclerView.ViewHolder(vista),View.OnClickListener{
         var tituloMaterial : TextView = itemView.findViewById(R.id.tituloTarjetaMaterialBusqueda)
         var descripcion : TextView = itemView.findViewById(R.id.textoTarjetaMaterialBusqueda)
+        private lateinit var video:Videos
         fun binding(tarjeta :  Videos){
             tituloMaterial.text = tarjeta.nombreVideo
             descripcion.text = tarjeta.descripcionLarga
+            video = tarjeta
         }
 
         override fun onClick(v: View?) {
-            TODO("Not yet implemented")
+            callbackinterfaz?.videoSeleccionado(video)
+        }
+
+        init {
+            itemView.setOnClickListener(this)
         }
     }
 
@@ -157,13 +180,19 @@ class listaTarjetasBusqueda : Fragment() {
     private inner class TarjetaHolderDoc(vista : View) : RecyclerView.ViewHolder(vista),View.OnClickListener{
         var tituloMaterial : TextView = itemView.findViewById(R.id.tituloTarjetaMaterialBusqueda)
         var descripcion : TextView = itemView.findViewById(R.id.textoTarjetaMaterialBusqueda)
+        private lateinit var doc:Articulos
         fun binding(tarjeta :  Articulos){
             tituloMaterial.text = tarjeta.nombreArticulo
             descripcion.text = tarjeta.descripcionLarga
+            doc = tarjeta
         }
 
         override fun onClick(v: View?) {
-            TODO("Not yet implemented")
+            callbackinterfaz?.docSeleccionado(doc)
+        }
+
+        init {
+            itemView.setOnClickListener(this)
         }
     }
 }
