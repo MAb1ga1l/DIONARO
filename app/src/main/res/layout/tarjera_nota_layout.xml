@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="145dp"
+    android:layout_height="233dp"
+    android:background="@color/naranja"
+    android:layout_marginBottom="10dp">
+
+    <TextView
+        android:id="@+id/textViewTituloNotaLista"
+        style="@style/SubtituloBlanco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/titulo"
+        app:layout_constraintBottom_toTopOf="@+id/textViewFechaNotaLista"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTextoNotaLista"
+        style="@style/TextoBlanco"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/textoAleatorio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewFechaNotaLista"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewFechaNotaLista"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFechaNotaLista" />
+
+    <TextView
+        android:id="@+id/textViewFechaNotaLista"
+        style="@style/TextoBlanco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/fechaNotas"
+        app:layout_constraintBottom_toTopOf="@+id/textViewTextoNotaLista"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTituloNotaLista"
+        app:layout_constraintStart_toStartOf="@+id/textViewTituloNotaLista"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloNotaLista" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

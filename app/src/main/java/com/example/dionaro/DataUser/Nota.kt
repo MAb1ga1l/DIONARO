@@ -2,13 +2,14 @@ package com.example.dionaro.DataUser
 
 import android.os.Parcel
 import android.os.Parcelable
+import java.util.*
 
-class Notas() : Parcelable{
+class Nota() : Parcelable{
 
     var titulo : String = ""
     var fecha : String = ""
     var textoEscrito : String = ""
-    var idNota : String = ""
+    var idNota : String = UUID.randomUUID().toString().substring(0,6)
 
     constructor(parcel: Parcel) : this() {
         titulo = parcel.readString().toString()
@@ -28,12 +29,12 @@ class Notas() : Parcelable{
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Notas> {
-        override fun createFromParcel(parcel: Parcel): Notas {
-            return Notas(parcel)
+    companion object CREATOR : Parcelable.Creator<Nota> {
+        override fun createFromParcel(parcel: Parcel): Nota {
+            return Nota(parcel)
         }
 
-        override fun newArray(size: Int): Array<Notas?> {
+        override fun newArray(size: Int): Array<Nota?> {
             return arrayOfNulls(size)
         }
     }

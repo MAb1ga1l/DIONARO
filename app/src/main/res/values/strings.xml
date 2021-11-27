@@ -50,6 +50,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="textoMaterialArtículos">Docs</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="titulo">Titulo</string>
+    <string name="fechaNotas">dd / mm / aa</string>
+    <string name="textoNotas">Tus ideas</string>
+    <!-- TODO: Remove or change this placeholder text -->
     <!-- TODO: Remove or change this placeholder text -->
 
 </resources>

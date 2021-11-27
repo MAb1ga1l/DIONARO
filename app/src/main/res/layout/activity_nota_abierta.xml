@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azul"
+    tools:context=".Notas.NotaAbierta">
+
+    <ImageButton
+        android:id="@+id/butonRegresoNotas"
+        style="@style/BotonIconoBlancoSecundario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="289dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/todo"
+        android:onClick="regresarNotas"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTituloNotaAbierta"
+        app:layout_constraintEnd_toStartOf="@+id/botonMenuNotaNueva"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icons8_chevron_left_30"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+    <ImageButton
+        android:id="@+id/botonMenuNotaNueva"
+        style="@style/BotonIconoBlancoSecundario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/butonRegresoNotas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/butonRegresoNotas"
+        app:srcCompat="@drawable/icons8_menu_vertical_24"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextTituloNotaAbierta"
+        style="@style/TituloBlanco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="4dp"
+        android:background="@null"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/titulo"
+        app:layout_constraintBottom_toTopOf="@+id/textViewFechaNotaAbierta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butonRegresoNotas"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/textViewFechaNotaAbierta"
+        style="@style/SubtituloBlanco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/fechaNotas"
+        app:layout_constraintBottom_toTopOf="@+id/editTextInputNotaAbierta"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTituloNotaAbierta"
+        app:layout_constraintStart_toStartOf="@+id/editTextTituloNotaAbierta"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTituloNotaAbierta"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/editTextInputNotaAbierta"
+        style="@style/SubtituloBlanco"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:ems="10"
+        android:gravity="start|top"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:text="@string/textoNotas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewFechaNotaAbierta"
+        app:layout_constraintStart_toStartOf="@+id/textViewFechaNotaAbierta"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFechaNotaAbierta"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,TextContrastCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@
         android:layout_marginStart="311dp"
         android:layout_marginEnd="20dp"
         android:contentDescription="@string/tituloTarjetaProgreso"
+        android:onClick="abrirNotaNueva"
         app:layout_constraintBottom_toBottomOf="@+id/botonHomeNotas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/botonHomeNotas"
@@ -58,6 +59,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerViewNotas"
+            android:name="com.example.dionaro.Notas.ListaNotas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/fragment_lista_notas" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
