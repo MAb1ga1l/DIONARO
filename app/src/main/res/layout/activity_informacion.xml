@@ -29,7 +29,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/icons8_running_24"
-            tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
+            tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml,DuplicateSpeakableTextCheck" />
 
         <ImageButton
             android:id="@+id/botonInicioNotas"
@@ -78,8 +78,10 @@
     <TextView
         android:id="@+id/textViewTituloMaterial"
         style="@style/TituloBlanco"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/subtituloMaterial"
         app:layout_constraintBottom_toBottomOf="@+id/botonHomeNotas5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,5 +112,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTituloMaterial">
 
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerViewInformacion"
+            android:name="com.example.dionaro.informacion.FragmentoMostrarVideos"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/fragment_fragmento_mostrar_videos" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

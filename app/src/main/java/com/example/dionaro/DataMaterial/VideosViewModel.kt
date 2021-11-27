@@ -41,6 +41,15 @@ class VideosViewModel : ViewModel() {
     "https://www.youtube.com/watch?v=jwa1FegbSQc",
     "https://www.youtube.com/watch?v=JHZVJnhGvzk",
     "https://www.youtube.com/watch?v=yA0ug78h_aI")
+    private val videoLLave = arrayOf("Y8qfqu9GsJw",
+        "GPfIjso9hlc",
+        "6X6ryiZvAf8",
+        "Ti1rmnJXBT0",
+        "wIoF94Xs9c0",
+        "WjtUnFl0tlY",
+        "jwa1FegbSQc",
+        "JHZVJnhGvzk",
+        "yA0ug78h_aI")
     private val textos = arrayOf("El seguro de gastos médicos mayores es un producto bastante complejo por lo que te preparé este video para ayudarte a entender mejor su funcionamiento! Preguntas y dudas en comentarios abajo del video!! Obtén la hoja de cálculo: https://mailchi.mp/01ca9348412b/pagan...  Ahora, la forma correcta de pagar una deuda no es ningún secreto: pagas lo que te cobran cada mes y listo. Si se trata de tarjetas de crédito, utilizas lo que aprendiste en mi video de tarjetas de crédito y siempre pagas el monto para no generar intereses, nunca sólo el mínimo.  Pero quizás te preocupa saber si pagando más rápido pagarías menos intereses, ¿cómo lo harías? Si tienes más de una deuda, ¿cuál pagas primero? Y si quieres ahorrar al mismo tiempo, ¿a qué le das prioridad? Esto lo resolveremos en este video, y te compartiré una hoja de cálculo donde puedes ir registrando la evolución de tu deuda.  Antes de empezar toma en cuenta que pagar tu deuda lo más rápido posible no siempre es necesario. Si tus deudas no te cobran intereses, no hay porque pagarlas pronto, solo sigue pagando lo que tienes que pagar para no generar intereses. En su lugar, puedes destinar tu dinero extra a una inversión donde crezca, y no al pago de una deuda que de todos modos no iba a crecer.",
     "Obtén la hoja de cálculo: https://mailchi.mp/01ca9348412b/pagan...  Ahora, la forma correcta de pagar una deuda no es ningún secreto: pagas lo que te cobran cada mes y listo. Si se trata de tarjetas de crédito, utilizas lo que aprendiste en mi video de tarjetas de crédito y siempre pagas el monto para no generar intereses, nunca sólo el mínimo.  Pero quizás te preocupa saber si pagando más rápido pagarías menos intereses, ¿cómo lo harías? Si tienes más de una deuda, ¿cuál pagas primero? Y si quieres ahorrar al mismo tiempo, ¿a qué le das prioridad? Esto lo resolveremos en este video, y te compartiré una hoja de cálculo donde puedes ir registrando la evolución de tu deuda.  Antes de empezar toma en cuenta que pagar tu deuda lo más rápido posible no siempre es necesario. Si tus deudas no te cobran intereses, no hay porque pagarlas pronto, solo sigue pagando lo que tienes que pagar para no generar intereses. En su lugar, puedes destinar tu dinero extra a una inversión donde crezca, y no al pago de una deuda que de todos modos no iba a crecer.",
     "Básicamente será una lista de gastos que deberás repasar con mucha atención para asegurarte de que no se te escapa nada. Con la plantilla de excel (google sheets en realidad) podrás identificar todos los gastos que puedes llegar tener de forma mensual y así conocer perfectamente qué debes de gastar y no gastar más de lo que ganas.  Esto solo es un documento, solito no resolverá nada, tienes que tomar acción. Asegúrate de que te apegas a tu presupuesto.",
@@ -62,6 +71,7 @@ class VideosViewModel : ViewModel() {
             videos.link = links[i]
             videos.texto = textos[i]
             videos.tema = temas[i]
+            videos.llaveVideo = videoLLave[i]
             videos.idVideo = idsVideo[i]
             videosRegistrados += videos
         }

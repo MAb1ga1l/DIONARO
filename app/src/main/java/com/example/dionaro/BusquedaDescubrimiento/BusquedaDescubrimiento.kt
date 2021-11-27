@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -107,6 +108,7 @@ class BusquedaDescubrimiento : AppCompatActivity() , listaTarjetasBusqueda.Inter
         val datos = intent.apply {
             putExtra("Accion",accion)
             putExtra("idData",video.idVideo)
+            putExtra("tituloM",video.nombreVideo)
             putExtra("tipoMaterial","Video")
         }
         setResult(Activity.RESULT_OK,datos)
@@ -119,6 +121,7 @@ class BusquedaDescubrimiento : AppCompatActivity() , listaTarjetasBusqueda.Inter
         val datos = intent.apply {
             putExtra("Accion",accion)
             putExtra("idData",doc.idArticulo)
+            putExtra("tituloM",doc.nombreArticulo)
             putExtra("tipoMaterial","Docs")
         }
         setResult(Activity.RESULT_OK,datos)

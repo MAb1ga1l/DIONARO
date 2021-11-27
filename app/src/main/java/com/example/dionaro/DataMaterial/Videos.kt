@@ -11,6 +11,7 @@ class Videos() : Parcelable{
     var link : String = ""
     var texto : String = ""
     var tema : String = ""
+    var llaveVideo : String = ""
     var idVideo : String = ""
 
     constructor(parcel: Parcel) : this() {
@@ -20,6 +21,7 @@ class Videos() : Parcelable{
         link = parcel.readString().toString()
         texto = parcel.readString().toString()
         tema = parcel.readString().toString()
+        llaveVideo = parcel.readString().toString()
         idVideo = parcel.readString().toString()
     }
 
@@ -30,6 +32,7 @@ class Videos() : Parcelable{
         parcel.writeString(link)
         parcel.writeString(texto)
         parcel.writeString(tema)
+        parcel.writeString(llaveVideo)
         parcel.writeString(idVideo)
     }
 
