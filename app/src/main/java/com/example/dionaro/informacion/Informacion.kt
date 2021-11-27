@@ -3,14 +3,10 @@ package com.example.dionaro.informacion
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import com.example.dionaro.DataMaterial.ArticulosViewModel
-import com.example.dionaro.DataMaterial.VideosViewModel
 import com.example.dionaro.R
 
 

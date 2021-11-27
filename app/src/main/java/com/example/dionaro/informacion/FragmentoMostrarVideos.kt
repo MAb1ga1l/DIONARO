@@ -1,22 +1,15 @@
 package com.example.dionaro.informacion
 
-import android.app.Activity
-import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.MediaController
 import android.widget.TextView
 import android.widget.VideoView
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.dionaro.DataMaterial.VideosViewModel
 import com.example.dionaro.R
-import com.google.android.youtube.player.YouTubeBaseActivity
-import com.google.android.youtube.player.YouTubePlayer
-import com.google.android.youtube.player.YouTubePlayerView
-import com.google.android.youtube.player.YouTubeStandalonePlayer
 
 private const val ARG_PARAM1 = "idVideo"
 
