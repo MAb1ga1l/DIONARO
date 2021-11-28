@@ -19,7 +19,6 @@ class Inicio : AppCompatActivity() {
 
     private var actividadRegreso = ""
     private var tipoDeBusqueda = ""
-    private var flagExistenAvances : Boolean = false
     private val dataAppViewModel : appsViewModel by lazy {
         ViewModelProvider(this).get(appsViewModel::class.java)
     }
@@ -65,7 +64,6 @@ class Inicio : AppCompatActivity() {
                 }
                 val inventario =dataAViewModel.avancesRegistrados
                 if(inventario.size > 0){
-                    flagExistenAvances = true
                     val material = inventario[posicionAvance]
                     val tarjetaProgreso = FragmentTarjetaProgreso.newInstance(material.nombreMaterial,material.tipoMaterial,material.progreso,material.fecha)
                     supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerTarjetaProgresoInicio,tarjetaProgreso).commit()

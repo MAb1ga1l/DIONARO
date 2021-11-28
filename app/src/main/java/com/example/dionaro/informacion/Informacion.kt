@@ -4,13 +4,16 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.text.format.DateFormat
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.example.dionaro.DataMaterial.ArticulosViewModel
+import com.example.dionaro.DataMaterial.VideosViewModel
 import com.example.dionaro.R
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
@@ -26,6 +29,12 @@ class Informacion : AppCompatActivity() {
     private val db = FirebaseFirestore.getInstance()
     private var flagGuardadoEnFav : Boolean = false
     private var flagGuardadoEnavance : Boolean = false
+    private val dataVViewModel : VideosViewModel by lazy {
+        ViewModelProvider(this).get(VideosViewModel::class.java)
+    }
+    private val dataDViewModel : ArticulosViewModel by lazy {
+        ViewModelProvider(this).get(ArticulosViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,6 +96,33 @@ class Informacion : AppCompatActivity() {
             setResult(Activity.RESULT_OK,datos)
             finish()
         }
+    }
+    @Suppress("UNUSED_PARAMETER")
+    fun redireccionarFuenteDirecta(view: View){
+        val url = buscarLink()
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
+    }
+
+    fun buscarLink() : String{
+        var link = ""
+        if (tipoMaterial == "Video"){
+            val inventario = dataVViewModel.videosRegistrados
+            for (material in inventario){
+                if (material.idVideo == idMaterial) {
+                    link = material.link
+                }
+            }
+        }else{
+            val inventario = dataDViewModel.articulosRegistrados
+            for (material in inventario){
+                if (material.idArticulo == idMaterial){
+                    link = material.link
+                }
+            }
+        }
+        return link
     }
 
     private fun flagGuardadoFavoritos(){
