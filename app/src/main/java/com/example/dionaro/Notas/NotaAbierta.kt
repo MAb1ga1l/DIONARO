@@ -67,12 +67,34 @@ class NotaAbierta : AppCompatActivity() {
         finish()
     }
 
+    @Suppress("UNUSED_PARAMETER")
+    fun menu(view: View){
+        val dialogo = DialogoFragmentMenuOpcionesNotas { flag, texto ->
+            if (flag){
+                if(texto == "Eliminar nota"){
+                    db.collection("notas").document(idNota).delete()
+                    mensaje = "Nota Eliminada"
+                    val datos = intent.apply {
+                        putExtra("Mensaje",mensaje)
+                    }
+                    setResult(Activity.RESULT_OK,datos)
+                    finish()
+                }else{
+                    Toast.makeText(this, "Para más hazte premium", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+        dialogo.show(supportFragmentManager,"DialogoMenu")
+    }
+
     fun buscarDataNota(){
         db.collection("notas").document(idNota).get().addOnSuccessListener {
             titulo.setText(it.get("titulo") as String?)
             texto.setText(it.get("textoEscrito") as String?)
         }
     }
+
+
 
     @SuppressLint("SetTextI18n")
     private fun guardarCambios() {

@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="48dp"
         android:contentDescription="@string/todo"
+        android:onClick="menu"
         app:layout_constraintBottom_toBottomOf="@+id/butonRegresoNotas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/butonRegresoNotas"

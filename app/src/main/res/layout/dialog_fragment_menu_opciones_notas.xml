@@ -8,8 +8,11 @@
     <Button
         android:id="@+id/buttonBuscarTemas"
         style="@style/botonesLargos"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/textoBotonBuscar"
+        android:text="@string/botonOk"
         app:layout_constraintBottom_toTopOf="@+id/buttonCancelarTemas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -20,6 +23,8 @@
     <Button
         android:id="@+id/buttonCancelarTemas"
         style="@style/botonesLargos"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="24dp"
         android:text="@string/textoBotonCancelar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,10 +39,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/bubblegum_sans"
-        android:text="@string/tituloTemas"
+        android:text="@string/tituloMenu"
         android:textColor="@color/naranja"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/gurpoTemas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +56,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="4dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBuscarTemas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,55 +68,19 @@
             style="@style/RadioButtonTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Tema1" />
+            android:text="@string/opcionUnoMenuNotas" />
 
         <RadioButton
             style="@style/RadioButtonTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Tema2" />
+            android:text="@string/opcionDosMenuNotas" />
 
         <RadioButton
             style="@style/RadioButtonTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Tema3" />
-
-        <RadioButton
-            style="@style/RadioButtonTema"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Tema4" />
-
-        <RadioButton
-            style="@style/RadioButtonTema"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Tema5" />
-
-        <RadioButton
-            style="@style/RadioButtonTema"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Tema6" />
-
-        <RadioButton
-            style="@style/RadioButtonTema"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Tema7" />
-
-        <RadioButton
-            style="@style/RadioButtonTema"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Tema8" />
-
-        <RadioButton
-            style="@style/RadioButtonTema"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Tema9" />
+            android:text="@string/opcionTresMenuNotas" />
 
     </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

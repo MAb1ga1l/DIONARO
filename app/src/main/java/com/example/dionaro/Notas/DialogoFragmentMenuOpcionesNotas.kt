@@ -1,4 +1,4 @@
-package com.example.dionaro.inicio
+package com.example.dionaro.Notas
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import android.widget.RadioGroup
 import androidx.fragment.app.DialogFragment
 import com.example.dionaro.R
 
-class DialogoFragmentTemas (val listener : (flag : Boolean, texto : String) -> Unit) : DialogFragment(){
+class DialogoFragmentMenuOpcionesNotas (val listener : (flag : Boolean, texto : String) -> Unit) : DialogFragment(){
 
     private lateinit var botonCancelarDialog : Button
     private lateinit var botonBuscarDialof : Button
@@ -21,7 +21,7 @@ class DialogoFragmentTemas (val listener : (flag : Boolean, texto : String) -> U
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val vista = inflater.inflate(R.layout.dialog_fragment_temas, container, false)
+        val vista = inflater.inflate(R.layout.dialog_fragment_menu_opciones_notas, container, false)
         inputTexto = vista.findViewById(R.id.gurpoTemas)
         botonCancelarDialog = vista.findViewById(R.id.buttonCancelarTemas)
         botonCancelarDialog.setOnClickListener {

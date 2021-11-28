@@ -54,6 +54,11 @@
     <string name="titulo">Titulo</string>
     <string name="fechaNotas">dd / mm / aa</string>
     <string name="textoNotas">Tus ideas</string>
+    <string name="opcionUnoMenuNotas">Ajuste de texto</string>
+    <string name="opcionDosMenuNotas">Ingresar plantilla</string>
+    <string name="botonOk">Ok</string>
+    <string name="tituloMenu">Menú</string>
+    <string name="opcionTresMenuNotas">Eliminar nota</string>
     <!-- TODO: Remove or change this placeholder text -->
     <!-- TODO: Remove or change this placeholder text -->
 
