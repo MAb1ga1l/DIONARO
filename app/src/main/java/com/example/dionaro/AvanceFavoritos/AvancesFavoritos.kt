@@ -5,14 +5,17 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.DataMaterial.Articulos
 import com.example.dionaro.DataMaterial.Videos
 import com.example.dionaro.R
 
-class AvancesFavoritos : AppCompatActivity() , ListaMateriales.InterfazMateriales{
+class AvancesFavoritos : AppCompatActivity() , ListaMateriales.InterfazMaterialesFavoritos{
     private lateinit var tituloActividad : TextView
+    private var temaFiltrado : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +42,37 @@ class AvancesFavoritos : AppCompatActivity() , ListaMateriales.InterfazMateriale
         }
         setResult(Activity.RESULT_OK,datos)
         finish()
+    }
+    @Suppress("UNUSED_PARAMETER")
+    fun menuOpciones(view: View){
+        Toast.makeText(this, "Para más hazte premium", Toast.LENGTH_SHORT).show()
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun filtrarPorTema(view: View){
+        val tema = (view as Button).text
+        var filtro = ""
+        if (temaFiltrado == ""){
+            //No hay nada filtrado y se guarda el tema directamente
+            temaFiltrado = tema as String
+            filtro = "Tema"
+            Toast.makeText(this, "Filtrado por $tema", Toast.LENGTH_SHORT).show()
+        }else{
+            //Ya hay un tema seleccionado para filtrar
+            if(tema.toString() == temaFiltrado){
+                //Se quita la selección del tema
+                temaFiltrado = ""
+                Toast.makeText(this, "Sin filtro", Toast.LENGTH_SHORT).show()
+            }else{
+                //solo se cambio de Selección
+                filtro = "Tema"
+                temaFiltrado = tema as String
+                Toast.makeText(this, "Filtrado por $tema", Toast.LENGTH_SHORT).show()
+            }
+        }
+        val fragmento = ListaMateriales.newInstance(temaFiltrado,filtro)
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewFavAvances,fragmento).commit()
+
     }
 
     override fun videoSeleccionado(video: Videos) {

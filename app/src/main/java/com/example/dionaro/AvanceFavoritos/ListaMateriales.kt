@@ -19,14 +19,16 @@ import com.example.dionaro.DataMaterial.Videos
 import com.example.dionaro.DataMaterial.VideosViewModel
 import com.example.dionaro.DataUser.Favoritos
 import com.example.dionaro.DataUser.FavoritosViewModel
-import com.example.dionaro.DataUser.NotaViewModel
 import com.example.dionaro.R
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 
+private const val ARG_PARAM1 = "textoBusqueda"
+private const val ARG_PARAM2 = "filtro"
 class ListaMateriales : Fragment() {
 
+    private var param2: String? = null
     private val db = FirebaseFirestore.getInstance().collection("favoritos").get().addOnSuccessListener {
             resultado ->
         if(resultado != null){
@@ -35,40 +37,49 @@ class ListaMateriales : Fragment() {
                 nuevoFav.fecha = fav.data["fecha"] as String
                 nuevoFav.tipoMaterial = fav.data["tipoMaterial"] as String
                 nuevoFav.idMaterial = fav.id
-                dataFavoritosViewModel.agregaNota(nuevoFav)
+                dataFViewModel.agregaNota(nuevoFav)
             }
-            val inventario =dataFavoritosViewModel.favoritosRegistrados
-            adaptador = TarjetaAdapter(inventario)
+            val inventario =dataFViewModel.favoritosRegistrados
+            val inventarioN = filtrarinventario(inventario)
+            adaptador = TarjetaAdapter(inventarioN)
             tarjetaFavRecyclerView.adapter = adaptador
         }
     }
-
+    private var param1: String? = null
     private lateinit var tarjetaFavRecyclerView: RecyclerView
     private var adaptador : TarjetaAdapter? = null
-    private var callbackinterfaz : InterfazMateriales? = null
-    private val dataFavoritosViewModel : FavoritosViewModel by lazy {
+    private var callbackinterfaz : InterfazMaterialesFavoritos? = null
+    private val dataFViewModel : FavoritosViewModel by lazy {
         ViewModelProvider(this).get(FavoritosViewModel::class.java)
     }
-    private val dataVideosViewModel : VideosViewModel by lazy {
+    private val dataVViewModel : VideosViewModel by lazy {
         ViewModelProvider(this).get(VideosViewModel::class.java)
     }
-    private val dataDocsViewModel : ArticulosViewModel by lazy {
+    private val dataDViewModel : ArticulosViewModel by lazy {
         ViewModelProvider(this).get(ArticulosViewModel::class.java)
     }
 
-    interface InterfazMateriales{
+    interface InterfazMaterialesFavoritos{
         fun videoSeleccionado(video:Videos)
         fun docSeleccionado(doc : Articulos)
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        callbackinterfaz = context as InterfazMateriales?
+        callbackinterfaz = context as InterfazMaterialesFavoritos?
     }
 
     override fun onDetach() {
         super.onDetach()
         callbackinterfaz = null
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+        }
     }
 
     override fun onCreateView(
@@ -79,13 +90,49 @@ class ListaMateriales : Fragment() {
         val vista = inflater.inflate(R.layout.fragment_lista_materiales, container, false)
         tarjetaFavRecyclerView = vista.findViewById(R.id.tarjetaFavRecyclerView) as RecyclerView
         tarjetaFavRecyclerView.layoutManager = LinearLayoutManager(context)
-        val inventario =dataFavoritosViewModel.favoritosRegistrados
+        val inventario =dataFViewModel.favoritosRegistrados
         adaptador = TarjetaAdapter(inventario)
         tarjetaFavRecyclerView.adapter = adaptador
         return vista
     }
 
-    companion object;
+    companion object {
+        fun newInstance(param1: String, param2: String) =
+            ListaMateriales().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1,param1)
+                    putString(ARG_PARAM2,param2)
+                }
+            }
+    }
+
+    private fun filtrarinventario(inventario: List<Favoritos>):List<Favoritos>{
+        var inventarioNuevo = mutableListOf<Favoritos>()
+        arguments = Bundle().apply {
+            putString(ARG_PARAM1,param1)
+            putString(ARG_PARAM2,param2)
+        }
+        if(param2 == "Tema"){
+            for (material in inventario){
+                if (material.tipoMaterial == "Video"){
+                    val video: Videos = buscarMaterialVideo(material.idMaterial)
+                    if(video.tema == param1){
+                        inventarioNuevo += material
+                    }
+                }else{
+                    val doc : Articulos = buscarMaterialDoc(material.idMaterial)
+                    if (doc.tema == param1){
+                        inventarioNuevo += material
+                    }
+                }
+            }
+        }
+        else{
+            inventarioNuevo = inventario as MutableList<Favoritos>
+        }
+
+        return inventarioNuevo
+    }
 
     private inner class TarjetaAdapter(var inventario: List<Favoritos>): RecyclerView.Adapter<TarjetaHolder>(){
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TarjetaHolder {
@@ -143,7 +190,7 @@ class ListaMateriales : Fragment() {
 
     private fun buscarMaterialVideo(idMaterial : String): Videos{
         var video = Videos()
-        val inventario = dataVideosViewModel.videosRegistrados
+        val inventario = dataVViewModel.videosRegistrados
         for (material in inventario){
             if (material.idVideo == idMaterial){
                 video = material
@@ -154,7 +201,7 @@ class ListaMateriales : Fragment() {
 
     private fun buscarMaterialDoc(idMaterial : String): Articulos{
         var doc = Articulos()
-        val inventario = dataDocsViewModel.articulosRegistrados
+        val inventario = dataDViewModel.articulosRegistrados
         for (material in inventario){
             if (material.idArticulo == idMaterial){
                 doc = material
