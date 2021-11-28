@@ -3,19 +3,14 @@ package com.example.dionaro.Notas
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dionaro.BusquedaDescubrimiento.listaTarjetasBusqueda
-import com.example.dionaro.DataMaterial.Articulos
-import com.example.dionaro.DataMaterial.Videos
-import com.example.dionaro.DataMaterial.VideosViewModel
 import com.example.dionaro.DataUser.Nota
 import com.example.dionaro.DataUser.NotaViewModel
 import com.example.dionaro.R
@@ -94,7 +89,7 @@ class ListaNotas : Fragment() {
     }
 
     //identificar notas de lado derecho
-    fun inventarioPar(inventario: List<Nota>) : List<Nota>{
+    private fun inventarioPar(inventario: List<Nota>) : List<Nota>{
         val nuevoInventario = mutableListOf<Nota>()
         var iterador = 1
         for(nota in inventario){
@@ -106,7 +101,7 @@ class ListaNotas : Fragment() {
         return nuevoInventario
     }
     //identificar notas de lado izquierda
-    fun inventarioImpar(inventario: List<Nota>) : List<Nota>{
+    private fun inventarioImpar(inventario: List<Nota>) : List<Nota>{
         val nuevoInventario = mutableListOf<Nota>()
         var iterador = 1
         for(nota in inventario){

@@ -20,7 +20,7 @@
         app:layout_constraintStart_toEndOf="@+id/botonHomeNotas"
         app:layout_constraintTop_toTopOf="@+id/botonHomeNotas"
         app:srcCompat="@android:drawable/ic_input_add"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <ImageButton
         android:id="@+id/botonHomeNotas"

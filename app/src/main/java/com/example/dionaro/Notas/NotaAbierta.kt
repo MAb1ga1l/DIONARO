@@ -4,19 +4,15 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
-import com.example.dionaro.DataUser.Nota
-import com.example.dionaro.DataUser.NotaViewModel
+import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.R
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 
 private const val ARG_PARAM3 = "idNota"
 private const val ARG_PARAM1 = "tipoNota"

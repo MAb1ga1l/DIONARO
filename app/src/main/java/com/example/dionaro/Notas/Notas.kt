@@ -5,13 +5,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.dionaro.DataUser.Nota
 import com.example.dionaro.DataUser.NotaViewModel
 import com.example.dionaro.R
 import com.google.firebase.firestore.FirebaseFirestore
@@ -29,10 +26,6 @@ class Notas : AppCompatActivity() , ListaNotas.InterfazNotas{
             supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewNotas, fragmentoNotas).commit()
             Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
         }
-    }
-
-    private val dataNotasViewModel : NotaViewModel by lazy {
-        ViewModelProvider(this).get(NotaViewModel::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

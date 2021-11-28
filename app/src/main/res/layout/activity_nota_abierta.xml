@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icons8_chevron_left_30"
-        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <ImageButton
         android:id="@+id/botonMenuNotaNueva"
@@ -38,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/butonRegresoNotas"
         app:srcCompat="@drawable/icons8_menu_vertical_24"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <EditText
         android:id="@+id/editTextTituloNotaAbierta"

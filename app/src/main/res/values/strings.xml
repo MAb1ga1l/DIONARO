@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">DIONARO</string>
     <string name="title_activity_informacion">Informacion</string>
     <string name="todo">TODO</string>
@@ -50,13 +50,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="textoMaterialArtículos">Docs</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="titulo">Titulo</string>
     <string name="fechaNotas">dd / mm / aa</string>
     <string name="textoNotas">Tus ideas</string>
     <string name="opcionUnoMenuNotas">Ajuste de texto</string>
     <string name="opcionDosMenuNotas">Ingresar plantilla</string>
-    <string name="botonOk">Ok</string>
+    <string name="botonOk" tools:ignore="ButtonCase">OK</string>
     <string name="tituloMenu">Menú</string>
     <string name="opcionTresMenuNotas">Eliminar nota</string>
     <!-- TODO: Remove or change this placeholder text -->
