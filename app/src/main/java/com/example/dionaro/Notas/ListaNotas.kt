@@ -49,7 +49,7 @@ class ListaNotas : Fragment() {
         adaptadorImpar = NotaImparAdapter(inventario)
         listaImparRecyclerView.adapter = adaptadorImpar
         listaParRecyclerView.adapter = adaptadorPar
-        Toast.makeText(context, "${inventario.size}", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(context, "${inventario.size}", Toast.LENGTH_SHORT).show()
 
         return vista
     }

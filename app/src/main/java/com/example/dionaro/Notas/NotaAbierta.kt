@@ -15,7 +15,7 @@ import com.example.dionaro.DataUser.Nota
 import com.example.dionaro.DataUser.NotaViewModel
 import com.example.dionaro.R
 
-private const val ARG_PARAM1 = "idNota"
+private const val ARG_PARAM1 = "Nota"
 private const val ARG_PARAM2 = "Bundle"
 class NotaAbierta : AppCompatActivity() {
 
@@ -24,29 +24,19 @@ class NotaAbierta : AppCompatActivity() {
     private lateinit var fecha : TextView
     private lateinit var texto : EditText
     private var mensaje = ""
-    private var idNota : String = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nota_abierta)
+        nota = Nota()
         val bundle = intent.getBundleExtra(ARG_PARAM2)
         if (bundle != null) {
-            nota = bundle.getParcelable<Nota>(ARG_PARAM1)!!
+            nota = bundle.getParcelable(ARG_PARAM1)!!
         }
-        //nota = Nota()
-        //nota = intent.getParcelableExtra<Nota>(ARG_PARAM1)!!
-        //idNota = intent.getStringExtra(ARG_PARAM1).toString()
         titulo = findViewById(R.id.editTextTituloNotaAbierta)
         fecha = findViewById(R.id.textViewFechaNotaAbierta)
         texto = findViewById(R.id.editTextInputNotaAbierta)
-        /*if (idNota == ""){
-            //Se crea una nota nueva
-            creaNota()
-        }else{
-            //se abre la nota solicitada
-            retomarDataNota()
-        }*/
     }
 
     companion object{
@@ -62,7 +52,7 @@ class NotaAbierta : AppCompatActivity() {
 
     @Suppress("UNUSED_PARAMETER")
     fun regresarNotas(view: View){
-        //guardarCambio()
+        guardarCambios()
         //Se regresa el mensaje de confirmación
         val datos = intent.apply {
             putExtra("Mensaje",mensaje)
@@ -71,36 +61,18 @@ class NotaAbierta : AppCompatActivity() {
         finish()
     }
 
-    //función para llenar la estructura de la nota
-   /* private fun creaNota(){
-        val nuevaNota = Nota()
-        nota = nuevaNota
-        notasViewModel.agregaNota(nuevaNota)
-    }
-    private fun retomarDataNota(){
-        val inventario = notasViewModel.notasRegistradas
-        for (notaEnInventario in inventario){
-            if(notaEnInventario.idNota == idNota){
-                titulo.setText(notaEnInventario.titulo)
-                texto.setText(notaEnInventario.textoEscrito)
-                nota = notaEnInventario
-            }
-        }
-    }*/
-
-    //función para gusrdar los cambios de la nota abierta
-    /*fun guardarCambio(){
-        nota.fecha = fecha.text as String
-        if(TextUtils.isEmpty(texto.text)){
-            nota.textoEscrito = "Faltan tus ideas"
-        }else{
-            nota.textoEscrito = texto.text.toString()
-        }
+    private fun guardarCambios() {
         if(TextUtils.isEmpty(titulo.text)){
-            nota.titulo = "Titulo de Nota"
+            nota.titulo =  "Titulo Nota"
         }else{
-            nota.titulo = titulo.text.toString()
+            nota.titulo =  titulo.text.toString()
         }
-        mensaje = "Nota guardada Correctamente"
-    }*/
+        if(TextUtils.isEmpty(texto.text)){
+            nota.textoEscrito =  "Faltan tus ideas"
+        }else{
+            nota.textoEscrito =  texto.text.toString()
+        }
+        nota.fecha = fecha.text.toString()
+        mensaje = "Nota guardada correctamente"
+    }
 }

@@ -22,7 +22,9 @@ class Notas : AppCompatActivity() {
         val datos : Intent? = respuesta.data
         val mensaje = datos?.getStringExtra("Mensaje")
         if (mensaje != null){
-            val fragmentoNotas =  ListaNotas.newInstance(dataNotasViewModel.notasRegistradas as ArrayList<Nota>)
+            val array = arrayListOf<Nota>()
+            array.addAll(dataNotasViewModel.notasRegistradas)
+            val fragmentoNotas =  ListaNotas.newInstance(array)
             supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewNotas, fragmentoNotas).commit()
             Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
         }
