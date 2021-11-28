@@ -8,8 +8,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import com.example.dionaro.DataUser.NotaViewModel
 import com.example.dionaro.R
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*

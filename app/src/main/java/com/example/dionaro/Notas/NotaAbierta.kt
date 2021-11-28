@@ -94,7 +94,7 @@ class NotaAbierta : AppCompatActivity() {
         dialogo.show(supportFragmentManager,"DialogoMenu")
     }
 
-    fun buscarDataNota(){
+    private fun buscarDataNota(){
         db.collection("notas").document(idNota).get().addOnSuccessListener {
             titulo.setText(it.get("titulo") as String?)
             texto.setText(it.get("textoEscrito") as String?)

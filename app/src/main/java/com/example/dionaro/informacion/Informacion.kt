@@ -6,13 +6,10 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.format.DateFormat
-import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.dionaro.DataUser.Favoritos
-import com.example.dionaro.DataUser.Nota
 import com.example.dionaro.R
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*

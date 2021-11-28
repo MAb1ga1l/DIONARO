@@ -4,15 +4,14 @@ package com.example.dionaro.AvanceFavoritos
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dionaro.BusquedaDescubrimiento.listaTarjetasBusqueda
 import com.example.dionaro.DataMaterial.Articulos
 import com.example.dionaro.DataMaterial.ArticulosViewModel
 import com.example.dionaro.DataMaterial.Videos

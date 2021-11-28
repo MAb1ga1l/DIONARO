@@ -21,7 +21,7 @@
         app:layout_constraintStart_toEndOf="@+id/textViewSubituloMaterialAvancesFav"
         app:layout_constraintTop_toTopOf="@+id/textViewSubituloMaterialAvancesFav"
         app:srcCompat="@drawable/icons8_menu_vertical_24"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <Button
         android:id="@+id/buttonTemaG"
@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="@+id/buttonTemaD"
         app:layout_constraintStart_toStartOf="@+id/buttonTemaD"
         app:layout_constraintTop_toBottomOf="@+id/buttonTemaD"
-        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,TextContrastCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <Button
         style="@style/botonAzulResaltado"
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="@+id/buttonTemaF"
         app:layout_constraintStart_toStartOf="@+id/buttonTemaF"
         app:layout_constraintTop_toTopOf="@+id/buttonTemaH"
-        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <Button
         android:id="@+id/buttonTemaH"
@@ -66,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="@+id/buttonTemaE"
         app:layout_constraintStart_toStartOf="@+id/buttonTemaE"
         app:layout_constraintTop_toTopOf="@+id/buttonTemaG"
-        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <Button
         android:id="@+id/buttonTemaD"
@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toEndOf="@+id/buttonTemaA"
         app:layout_constraintStart_toStartOf="@+id/buttonTemaA"
         app:layout_constraintTop_toBottomOf="@+id/buttonTemaA"
-        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <Button
         android:id="@+id/buttonTemaF"
@@ -97,7 +97,7 @@
         app:layout_constraintEnd_toEndOf="@+id/buttonTemaC"
         app:layout_constraintStart_toStartOf="@+id/buttonTemaC"
         app:layout_constraintTop_toTopOf="@+id/buttonTemaE"
-        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <Button
         android:id="@+id/buttonTemaE"
@@ -112,7 +112,7 @@
         app:layout_constraintEnd_toEndOf="@+id/buttonTemaB"
         app:layout_constraintStart_toStartOf="@+id/buttonTemaB"
         app:layout_constraintTop_toTopOf="@+id/buttonTemaD"
-        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <TextView
         android:id="@+id/textViewTituloAvancesFavoritos"
@@ -157,7 +157,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonTemaB"
         app:layout_constraintTop_toTopOf="@+id/buttonTemaB"
-        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <Button
         android:id="@+id/buttonTemaB"
@@ -173,7 +173,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonTemaA"
         app:layout_constraintTop_toTopOf="@+id/buttonTemaA"
-        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <Button
         android:id="@+id/buttonTemaA"
@@ -190,7 +190,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSubituloAvancesFav"
-        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <TextView
         android:id="@+id/textViewSubituloAvancesFav"
