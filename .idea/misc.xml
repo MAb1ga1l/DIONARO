@@ -34,6 +34,7 @@
         <entry key="app/src/main/res/layout/fragment_fragmento_mostrar_videos.xml" value="0.16927899686520376" />
         <entry key="app/src/main/res/layout/fragment_fragmento_nota_nueva.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/fragment_lista_materiales.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_lista_materiales_avance.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/layout/fragment_lista_notas.xml" value="0.2125748502994012" />
         <entry key="app/src/main/res/layout/fragment_lista_tarjetas_busqueda.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_lista_tarjetas_descubre.xml" value="0.1" />

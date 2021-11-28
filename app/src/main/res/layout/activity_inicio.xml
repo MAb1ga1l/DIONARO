@@ -214,7 +214,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/botonInicioRecordatorios"
+            android:id="@+id/botonAvancesMaterial"
             style="@style/BotonIconoBlancoSecundario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -235,11 +235,11 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:onClick="redireccionNotas"
-            app:layout_constraintBottom_toBottomOf="@+id/botonInicioRecordatorios"
+            app:layout_constraintBottom_toBottomOf="@+id/botonAvancesMaterial"
             app:layout_constraintEnd_toStartOf="@+id/botonInicioFavoritos"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/botonInicioRecordatorios"
-            app:layout_constraintTop_toTopOf="@+id/botonInicioRecordatorios"
+            app:layout_constraintStart_toEndOf="@+id/botonAvancesMaterial"
+            app:layout_constraintTop_toTopOf="@+id/botonAvancesMaterial"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/icons8_note_24"
             tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />

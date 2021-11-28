@@ -11,6 +11,7 @@
         android:layout_height="match_parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/logoMaterialProgreso"
             style="@style/logosImageView"
             android:layout_marginStart="26dp"
             android:layout_marginEnd="14dp"
@@ -23,11 +24,13 @@
         <TextView
             android:id="@+id/tituloTarjetaProgresoInicio"
             style="@style/SubtituloBlanco"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="131dp"
+            android:layout_marginEnd="20dp"
             android:text="@string/tituloTarjetaProgreso"
             app:layout_constraintBottom_toTopOf="@+id/progressBarTarjetaInicio"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TextContrastCheck" />

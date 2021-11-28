@@ -13,15 +13,25 @@ import com.example.dionaro.DataMaterial.Articulos
 import com.example.dionaro.DataMaterial.Videos
 import com.example.dionaro.R
 
-class AvancesFavoritos : AppCompatActivity() , ListaMateriales.InterfazMaterialesFavoritos{
+class AvancesFavoritos : AppCompatActivity() , ListaMateriales.InterfazMaterialesFavoritos, ListaMaterialesAvance.InterfazMaterialesAvance{
     private lateinit var tituloActividad : TextView
     private var temaFiltrado : String = ""
+    private var actividad: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_avances_favoritos)
         tituloActividad = findViewById(R.id.textViewTituloAvancesFavoritos)
-        tituloActividad.text = intent.getStringExtra("TituloActividad")
+        actividad = intent.getStringExtra("TituloActividad").toString()
+        tituloActividad.text = actividad
+        val filtro = ""
+        if(actividad=="Favoritos"){
+            val fragmento = ListaMateriales.newInstance(temaFiltrado,filtro)
+            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewFavAvances,fragmento).commit()
+        }else{
+            val fragmento = ListaMaterialesAvance.newInstance(temaFiltrado,filtro)
+            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewFavAvances,fragmento).commit()
+        }
     }
 
     companion object{
@@ -70,9 +80,13 @@ class AvancesFavoritos : AppCompatActivity() , ListaMateriales.InterfazMateriale
                 Toast.makeText(this, "Filtrado por $tema", Toast.LENGTH_SHORT).show()
             }
         }
-        val fragmento = ListaMateriales.newInstance(temaFiltrado,filtro)
-        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewFavAvances,fragmento).commit()
-
+        if(actividad=="Favoritos"){
+            val fragmento = ListaMateriales.newInstance(temaFiltrado,filtro)
+            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewFavAvances,fragmento).commit()
+        }else{
+            val fragmento = ListaMaterialesAvance.newInstance(temaFiltrado,filtro)
+            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewFavAvances,fragmento).commit()
+        }
     }
 
     override fun videoSeleccionado(video: Videos) {

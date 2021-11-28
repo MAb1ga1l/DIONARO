@@ -18,17 +18,21 @@ import java.util.*
 class Informacion : AppCompatActivity() {
     private lateinit var tituloMaterial : TextView
     private lateinit var botonFavoritos: ImageButton
+    private lateinit var botonAvance: ImageButton
     private var idMaterial : String = ""
     private var tipoMaterial : String = ""
     private val db = FirebaseFirestore.getInstance()
     private var flagGuardadoEnFav : Boolean = false
+    private var flagGuardadoEnavance : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_informacion)
         tituloMaterial = findViewById(R.id.textViewTituloMaterial)
         botonFavoritos = findViewById(R.id.botonInicioFavoritos)
+        botonAvance = findViewById(R.id.botonAvancesMaterial)
         flagGuardadoFavoritos()
+        flagGuardadoAvance()
         tipoMaterial = intent.getStringExtra("tipoMaterial").toString()
         tituloMaterial.text = intent.getStringExtra("tituloM").toString()
         idMaterial = intent.getStringExtra("idMaterial").toString()
@@ -87,6 +91,21 @@ class Informacion : AppCompatActivity() {
         }
     }
 
+    private fun flagGuardadoAvance(){
+        botonAvance.setColorFilter(Color.parseColor("#4e93e6"))
+        db.collection("avances").get().addOnSuccessListener {
+                resultado ->
+            if(resultado != null){
+                for(notas in resultado){
+                    if (notas.id == idMaterial){
+                        botonAvance.setColorFilter(Color.parseColor("#FFFFFFFF"))
+                        flagGuardadoEnavance = true
+                    }
+                }
+            }
+        }
+    }
+
     @Suppress("UNUSED_PARAMETER")
     fun guardarEliminarFavoritos(view: View){
         if(flagGuardadoEnFav){
@@ -103,6 +122,28 @@ class Informacion : AppCompatActivity() {
                 hashMapOf(
                     "fecha" to ajusteFecha(fechaactual),
                     "tipoMaterial" to tipoMaterial
+                )
+            )
+        }
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun guardarEliminarAvance(view: View){
+        if(flagGuardadoEnavance){
+            //se quita el guardado de los avances
+            botonAvance.setColorFilter(Color.parseColor("#4e93e6"))
+            db.collection("avances").document(idMaterial).delete()
+            flagGuardadoEnavance = false
+        }else{
+            //se guarda en avances
+            botonAvance.setColorFilter(Color.parseColor("#FFFFFFFF"))
+            flagGuardadoEnavance = true
+            val fechaactual = Date()
+            db.collection("avances").document(idMaterial).set(
+                hashMapOf(
+                    "fecha" to ajusteFecha(fechaactual),
+                    "tipoMaterial" to tipoMaterial,
+                    "progreso" to "0"
                 )
             )
         }

@@ -10,17 +10,20 @@ class Avance() : Parcelable{
     var idMaterial : String = ""
     var progreso : String = ""
     var fecha : String = ""
+    var tipoMaterial : String = ""
 
     constructor(parcel: Parcel) : this() {
         idMaterial = parcel.readString().toString()
         progreso = parcel.readString().toString()
         fecha = parcel.readString().toString()
+        tipoMaterial = parcel.readString().toString()
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(idMaterial)
         parcel.writeString(progreso)
         parcel.writeString(fecha)
+        parcel.writeString(tipoMaterial)
     }
 
     override fun describeContents(): Int {
