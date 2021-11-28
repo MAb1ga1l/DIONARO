@@ -107,6 +107,10 @@ class MainActivity : AppCompatActivity() {
             val intento = Informacion.nuevaInstancia(this,idData,tipoMaterial,titulo)
             ejecutarActividad.launch(intento)
         }
+        if (accionARealizar=="Notas"){
+            val intento = Notas.nuevaInstancia(this)
+            ejecutarActividad.launch(intento)
+        }
     }
 
 }

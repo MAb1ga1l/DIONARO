@@ -49,4 +49,14 @@ class Informacion : AppCompatActivity() {
         setResult(Activity.RESULT_OK,datos)
         finish()
     }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun redireccionNotas(unBoton: View){
+        val accion = "Notas"
+        val datos = intent.apply {
+            putExtra("Accion",accion)
+        }
+        setResult(Activity.RESULT_OK,datos)
+        finish()
+    }
 }

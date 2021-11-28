@@ -14,17 +14,18 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.dionaro.DataUser.Nota
 import com.example.dionaro.DataUser.NotaViewModel
 import com.example.dionaro.R
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
-class Notas : AppCompatActivity() {
+class Notas : AppCompatActivity() , ListaNotas.InterfazNotas{
 
+    private val db = FirebaseFirestore.getInstance()
     private var ejecutarActividad = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         respuesta->
         val datos : Intent? = respuesta.data
         val mensaje = datos?.getStringExtra("Mensaje")
         if (mensaje != null){
-            val array = arrayListOf<Nota>()
-            array.addAll(dataNotasViewModel.notasRegistradas)
-            val fragmentoNotas =  ListaNotas.newInstance(array)
+            val fragmentoNotas =  ListaNotas.newInstance()
             supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewNotas, fragmentoNotas).commit()
             Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
         }
@@ -37,9 +38,7 @@ class Notas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notas)
-        val array = arrayListOf<Nota>()
-        array.addAll(dataNotasViewModel.notasRegistradas)
-        val fragmentoNotas =  ListaNotas.newInstance(array)
+        val fragmentoNotas =  ListaNotas.newInstance()
         supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewNotas, fragmentoNotas).commit()
     }
 
@@ -64,9 +63,20 @@ class Notas : AppCompatActivity() {
 
     @Suppress("UNUSED_PARAMETER")
     fun abrirNotaNueva(view: View){
-        val nuevaNota = Nota()
-        dataNotasViewModel.agregaNota(nuevaNota)
-        val intento = NotaAbierta.nuevaInstancia(this,nuevaNota)
+        val idNota = UUID.randomUUID().toString().substring(0,6)
+        db.collection("notas").document(idNota).set(
+            hashMapOf(
+                "titulo" to "",
+                "fecha" to "",
+                "textoEscrito" to ""
+            )
+        )
+        val intento = NotaAbierta.nuevaInstancia(this,idNota,"Nueva")
+        ejecutarActividad.launch(intento)
+    }
+
+    override fun idNotaSelecionado(id: String) {
+        val intento = NotaAbierta.nuevaInstancia(this,id,"Seleccion")
         ejecutarActividad.launch(intento)
     }
 

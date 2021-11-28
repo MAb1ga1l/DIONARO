@@ -1,5 +1,6 @@
 package com.example.dionaro.Notas
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -14,12 +15,18 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.dionaro.DataUser.Nota
 import com.example.dionaro.DataUser.NotaViewModel
 import com.example.dionaro.R
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
-private const val ARG_PARAM1 = "Nota"
-private const val ARG_PARAM2 = "Bundle"
+private const val ARG_PARAM3 = "idNota"
+private const val ARG_PARAM1 = "tipoNota"
+
 class NotaAbierta : AppCompatActivity() {
 
-    private lateinit var nota: Nota
+    //private lateinit var nota: Nota
+    private val db = FirebaseFirestore.getInstance()
+    private var idNota : String = ""
+    private var tipoNota : String = ""
     private lateinit var titulo : EditText
     private lateinit var fecha : TextView
     private lateinit var texto : EditText
@@ -29,23 +36,22 @@ class NotaAbierta : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nota_abierta)
-        nota = Nota()
-        val bundle = intent.getBundleExtra(ARG_PARAM2)
-        if (bundle != null) {
-            nota = bundle.getParcelable(ARG_PARAM1)!!
-        }
+        idNota = intent.getStringExtra(ARG_PARAM3).toString()
+        tipoNota = intent.getStringExtra(ARG_PARAM1).toString()
         titulo = findViewById(R.id.editTextTituloNotaAbierta)
         fecha = findViewById(R.id.textViewFechaNotaAbierta)
         texto = findViewById(R.id.editTextInputNotaAbierta)
+        if (tipoNota == "Seleccion"){
+            buscarDataNota()
+        }
     }
 
     companion object{
-        fun nuevaInstancia(contexto : Context,nota: Nota) : Intent {
-            val bundle = Bundle()
+        fun nuevaInstancia(contexto : Context,idNota:String,tipoNota:String) : Intent {
             return Intent(contexto, NotaAbierta::class.java).apply {
                 //Aquí se recibira el id de la Nota en caso de existir
-                bundle.putParcelable(ARG_PARAM1, nota)
-                putExtra(ARG_PARAM2, bundle)
+                putExtra(ARG_PARAM1,tipoNota)
+                putExtra(ARG_PARAM3,idNota)
             }
         }
     }
@@ -61,18 +67,28 @@ class NotaAbierta : AppCompatActivity() {
         finish()
     }
 
+    fun buscarDataNota(){
+        db.collection("notas").document(idNota).get().addOnSuccessListener {
+            titulo.setText(it.get("titulo") as String?)
+            texto.setText(it.get("textoEscrito") as String?)
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
     private fun guardarCambios() {
         if(TextUtils.isEmpty(titulo.text)){
-            nota.titulo =  "Titulo Nota"
-        }else{
-            nota.titulo =  titulo.text.toString()
+            titulo.setText("Titulo Nota")
         }
         if(TextUtils.isEmpty(texto.text)){
-            nota.textoEscrito =  "Faltan tus ideas"
-        }else{
-            nota.textoEscrito =  texto.text.toString()
+            texto.setText("Faltan tus ideas")
         }
-        nota.fecha = fecha.text.toString()
+        db.collection("notas").document(idNota).set(
+            hashMapOf(
+                "titulo" to titulo.text.toString(),
+                "fecha" to fecha.text.toString(),
+                "textoEscrito" to texto.text.toString()
+            )
+        )
         mensaje = "Nota guardada correctamente"
     }
 }
