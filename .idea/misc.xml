@@ -25,6 +25,7 @@
         <entry key="app/src/main/res/layout/activity_perfil.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_recordatorios.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dialog_fragment_busqueda.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/dialog_fragment_guarda_progreso.xml" value="0.24489795918367346" />
         <entry key="app/src/main/res/layout/dialog_fragment_menu_opciones_notas.xml" value="0.335" />
         <entry key="app/src/main/res/layout/dialog_fragment_temas.xml" value="0.335" />
         <entry key="app/src/main/res/layout/dialogo_fragment_nota_nueva.xml" value="0.3098958333333333" />

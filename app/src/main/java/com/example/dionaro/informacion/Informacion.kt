@@ -9,6 +9,7 @@ import android.text.format.DateFormat
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.R
 import com.google.firebase.firestore.FirebaseFirestore
@@ -21,6 +22,7 @@ class Informacion : AppCompatActivity() {
     private lateinit var botonAvance: ImageButton
     private var idMaterial : String = ""
     private var tipoMaterial : String = ""
+    private var accionRegreso : String = ""
     private val db = FirebaseFirestore.getInstance()
     private var flagGuardadoEnFav : Boolean = false
     private var flagGuardadoEnavance : Boolean = false
@@ -58,22 +60,33 @@ class Informacion : AppCompatActivity() {
 
     @Suppress("UNUSED_PARAMETER")
     fun regresarInicio(view: View){
+        guardarProgreso()
         val accion = "RegresoHome"
-        val datos = intent.apply {
-            putExtra("Accion",accion)
+        if(flagGuardadoEnavance){
+            accionRegreso = accion
+            guardarProgreso()
+        }else{
+            val datos = intent.apply {
+                putExtra("Accion",accion)
+            }
+            setResult(Activity.RESULT_OK,datos)
+            finish()
         }
-        setResult(Activity.RESULT_OK,datos)
-        finish()
     }
 
     @Suppress("UNUSED_PARAMETER")
     fun redireccionNotas(unBoton: View){
         val accion = "Notas"
-        val datos = intent.apply {
-            putExtra("Accion",accion)
+        if(flagGuardadoEnavance){
+            accionRegreso = accion
+            guardarProgreso()
+        }else{
+            val datos = intent.apply {
+                putExtra("Accion",accion)
+            }
+            setResult(Activity.RESULT_OK,datos)
+            finish()
         }
-        setResult(Activity.RESULT_OK,datos)
-        finish()
     }
 
     private fun flagGuardadoFavoritos(){
@@ -154,5 +167,27 @@ class Informacion : AppCompatActivity() {
         val mes = DateFormat.format("MM", fecha) as String
         val anio = DateFormat.format("yyyy", fecha) as String
         return day.plus(" / ").plus(mes).plus(" / ").plus(anio)
+    }
+
+    private fun guardarProgreso(){
+        val dialogo = DialogFragmentGuardaProgreso{flag, valorProgreso ->
+            if (flag){
+                val fechaactual = Date()
+                db.collection("avances").document(idMaterial).set(
+                    hashMapOf(
+                        "fecha" to ajusteFecha(fechaactual),
+                        "tipoMaterial" to tipoMaterial,
+                        "progreso" to valorProgreso
+                    )
+                )
+                val datos = intent.apply {
+                    putExtra("Accion",accionRegreso)
+                }
+                setResult(Activity.RESULT_OK,datos)
+                finish()
+                //Toast.makeText(this, valorProgreso, Toast.LENGTH_SHORT).show()
+            }
+        }
+        dialogo.show(supportFragmentManager,"DialogoProgreso")
     }
 }
