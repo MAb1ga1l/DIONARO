@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.text.format.DateFormat
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -13,6 +14,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dionaro.R
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
 private const val ARG_PARAM3 = "idNota"
 private const val ARG_PARAM1 = "tipoNota"
@@ -35,11 +37,20 @@ class NotaAbierta : AppCompatActivity() {
         idNota = intent.getStringExtra(ARG_PARAM3).toString()
         tipoNota = intent.getStringExtra(ARG_PARAM1).toString()
         titulo = findViewById(R.id.editTextTituloNotaAbierta)
+        val fechaActual = Date()
         fecha = findViewById(R.id.textViewFechaNotaAbierta)
+        fecha.text = ajusteFecha(fechaActual)
         texto = findViewById(R.id.editTextInputNotaAbierta)
         if (tipoNota == "Seleccion"){
             buscarDataNota()
         }
+    }
+
+    private fun ajusteFecha(fecha : Date) : String {
+        val day = DateFormat.format("dd", fecha) as String
+        val mes = DateFormat.format("MM", fecha) as String
+        val anio = DateFormat.format("yyyy", fecha) as String
+        return day.plus(" / ").plus(mes).plus(" / ").plus(anio)
     }
 
     companion object{

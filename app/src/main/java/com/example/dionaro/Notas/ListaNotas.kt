@@ -21,7 +21,6 @@ class ListaNotas : Fragment() {
             resultado ->
         if(resultado != null){
             for(notas in resultado){
-                Log.d("ListaNotas", notas.id)
                 val nuevaNota = Nota()
                 nuevaNota.idNota = notas.id
                 nuevaNota.titulo = notas.data["titulo"] as String

@@ -53,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
+            android:onClick="guardarEliminarFavoritos"
             app:layout_constraintBottom_toBottomOf="@+id/botonInicioNotas"
             app:layout_constraintEnd_toStartOf="@+id/botonInicioPerfil"
             app:layout_constraintHorizontal_bias="0.5"
