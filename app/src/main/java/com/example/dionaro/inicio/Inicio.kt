@@ -19,6 +19,7 @@ class Inicio : AppCompatActivity() {
 
     private var actividadRegreso = ""
     private var tipoDeBusqueda = ""
+    private var flagExistenAvances : Boolean = false
     private val dataAppViewModel : appsViewModel by lazy {
         ViewModelProvider(this).get(appsViewModel::class.java)
     }
@@ -63,9 +64,19 @@ class Inicio : AppCompatActivity() {
                     dataAViewModel.agregarAvance(nuevoAvance)
                 }
                 val inventario =dataAViewModel.avancesRegistrados
-                val material = inventario[posicionAvance]
-                val tarjetaProgreso = FragmentTarjetaProgreso.newInstance(material.nombreMaterial,material.tipoMaterial,material.progreso,material.fecha)
-                supportFragmentManager.beginTransaction().add(R.id.fragmentContainerTarjetaProgresoInicio,tarjetaProgreso).commit()
+                if(inventario.size > 0){
+                    flagExistenAvances = true
+                    val material = inventario[posicionAvance]
+                    val tarjetaProgreso = FragmentTarjetaProgreso.newInstance(material.nombreMaterial,material.tipoMaterial,material.progreso,material.fecha)
+                    supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerTarjetaProgresoInicio,tarjetaProgreso).commit()
+                }else{
+                    val tarjetaProgreso = FragmentoSinAvances()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerTarjetaProgresoInicio,tarjetaProgreso).commit()
+                }
+
+            }else{
+                val tarjetaProgreso = FragmentoSinAvances()
+                supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerTarjetaProgresoInicio,tarjetaProgreso).commit()
             }
         }
     }
@@ -178,12 +189,6 @@ class Inicio : AppCompatActivity() {
                 putExtra("idData", material.idMaterial)
                 putExtra("tituloM", material.nombreMaterial)
                 putExtra("tipoMaterial", material.tipoMaterial)
-            }
-            setResult(Activity.RESULT_OK,datos)
-            finish()
-        }else {
-            val datos = intent.apply {
-                putExtra("Actividad", actividadRegreso)
             }
             setResult(Activity.RESULT_OK,datos)
             finish()

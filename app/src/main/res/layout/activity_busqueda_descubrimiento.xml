@@ -10,27 +10,16 @@
     <TextView
         android:id="@+id/textViewTituloBusqueda"
         style="@style/TituloBlanco"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/tituloBuscado"
         app:layout_constraintBottom_toTopOf="@+id/searchViewBusqueda"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        style="@style/BotonIconoBlancoSecundario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="188dp"
-        android:layout_marginEnd="20dp"
-        android:contentDescription="@string/tituloTarjetaProgreso"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewTituloBusqueda"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewTituloBusqueda"
-        app:layout_constraintTop_toTopOf="@+id/textViewTituloBusqueda"
-        app:srcCompat="@drawable/icons8_heart_30"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout7"

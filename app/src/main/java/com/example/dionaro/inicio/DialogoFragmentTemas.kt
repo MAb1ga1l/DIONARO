@@ -29,10 +29,15 @@ class DialogoFragmentTemas (val listener : (flag : Boolean, texto : String) -> U
         }
         botonBuscarDialof = vista.findViewById(R.id.buttonBuscarTemas)
         botonBuscarDialof.setOnClickListener {
-            val selectID = inputTexto.checkedRadioButtonId
-            val radio = vista.findViewById<RadioButton>(selectID)
-            regresoActividad(radio.text.toString())
-        }
+            if (inputTexto.checkedRadioButtonId == -1) {
+                dismiss()
+            } else {
+                val selectID = inputTexto.checkedRadioButtonId
+                val radio = vista.findViewById<RadioButton>(selectID)
+                regresoActividad(radio.text.toString())
+            }
+
+            }
         return vista
     }
 

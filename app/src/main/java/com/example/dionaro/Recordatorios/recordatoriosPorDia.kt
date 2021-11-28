@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dionaro.R
@@ -16,6 +18,7 @@ import com.example.dionaro.R
 class recordatoriosPorDia : Fragment() {
 
     private lateinit var recordatorioRecyclerView: RecyclerView
+    private lateinit var botonNuevo:ImageButton
     private var adaptador: RecordatorioAdapter? = null
 
     override fun onCreateView(
@@ -24,10 +27,12 @@ class recordatoriosPorDia : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val vista = inflater.inflate(R.layout.fragment_recordatorios_por_dia, container, false)
+        botonNuevo = vista.findViewById(R.id.botonNuevoRecordatorio)
+        botonNuevo.setOnClickListener { mensajePremium() }
         recordatorioRecyclerView =
             vista.findViewById(R.id.recordatoriosRecyclerView) as RecyclerView
         recordatorioRecyclerView.layoutManager = LinearLayoutManager(context)
-        val inventario = mutableListOf("Recordatorio 1", "Recordatorio 2", "Recordatorio 3","Recordatorio 4","Recordatorio 5")
+        val inventario = mutableListOf("Recordatorio 1", "Recordatorio 2")
         adaptador = RecordatorioAdapter(inventario)
         recordatorioRecyclerView.adapter = adaptador
         return vista
@@ -60,5 +65,9 @@ class recordatoriosPorDia : Fragment() {
             TODO("Not yet implemented")
         }
 
+    }
+
+    fun mensajePremium(){
+        Toast.makeText(context, "Para más hazte premium", Toast.LENGTH_SHORT).show()
     }
 }
