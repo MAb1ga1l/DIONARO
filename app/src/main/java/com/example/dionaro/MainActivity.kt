@@ -21,14 +21,26 @@ class MainActivity : AppCompatActivity() {
         val actividad = datos?.getStringExtra("Actividad")
         var textoExtra = datos?.getStringExtra("Data")
         var tipoBusqueda = datos?.getStringExtra("TipoBusqueda")
+        var idData = datos?.getStringExtra("idData")
+        var titulo = datos?.getStringExtra("tituloM")
+        var tipoMAterial = datos?.getStringExtra("tipoMaterial")
         if (textoExtra == null){
             textoExtra = ""
         }
         if (tipoBusqueda ==null){
             tipoBusqueda = ""
         }
+        if (idData ==null){
+            idData = ""
+        }
+        if (titulo ==null){
+            titulo = ""
+        }
+        if (tipoMAterial ==null){
+            tipoMAterial = ""
+        }
         if (actividad != null) {
-            cambioActividad(actividad,textoExtra,tipoBusqueda)
+            cambioActividad(actividad,textoExtra,tipoBusqueda,idData,titulo,tipoMAterial)
         }
     }
     private var ejecutarActividad = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
@@ -62,7 +74,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun cambioActividad(actividad:String,textoExtra : String,tipoBusqueda:String){
+    private fun cambioActividad(
+        actividad: String,
+        textoExtra: String,
+        tipoBusqueda: String,
+        idData: String,
+        titulo: String,
+        tipoMAterial: String
+    ){
         if (actividad=="Recordatorios"){
             val intento = Recordatorios.nuevaInstancia(this)
             ejecutarActividad.launch(intento)
@@ -88,8 +107,8 @@ class MainActivity : AppCompatActivity() {
             ejecutarActividad.launch(intento)
         }
         if (actividad=="Material"){
-            //val intento = Informacion.nuevaInstancia(this)
-            //ejecutarActividad.launch(intento)
+            val intento = Informacion.nuevaInstancia(this,idData,tipoMAterial,titulo)
+            ejecutarActividad.launch(intento)
         }
     }
 

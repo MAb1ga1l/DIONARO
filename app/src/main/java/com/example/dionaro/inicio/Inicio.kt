@@ -6,10 +6,14 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.dionaro.DataMaterial.appsViewModel
+import com.example.dionaro.DataMaterial.*
+import com.example.dionaro.DataUser.Avance
+import com.example.dionaro.DataUser.AvanceViewModel
 import com.example.dionaro.R
+import com.google.firebase.firestore.FirebaseFirestore
 
 class Inicio : AppCompatActivity() {
 
@@ -18,7 +22,18 @@ class Inicio : AppCompatActivity() {
     private val dataAppViewModel : appsViewModel by lazy {
         ViewModelProvider(this).get(appsViewModel::class.java)
     }
+    private val dataAViewModel : AvanceViewModel by lazy {
+        ViewModelProvider(this).get(AvanceViewModel::class.java)
+    }
+    private val dataVViewModel : VideosViewModel by lazy {
+        ViewModelProvider(this).get(VideosViewModel::class.java)
+    }
+    private val dataDViewModel : ArticulosViewModel by lazy {
+        ViewModelProvider(this).get(ArticulosViewModel::class.java)
+    }
     private var posicionDescubre : Int = 0
+    private var posicionAvance : Int = 0
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +42,32 @@ class Inicio : AppCompatActivity() {
         val app = dataAppViewModel.appsRegitradas[posicionDescubre]
         val tarjetaDescubre = FragmentTarjetaDescubre.newInstance(app.nombre,app.linkFoto,app.descripcion,app.puntuacion)
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainerViewDescubre, tarjetaDescubre).commit()
+        db.collection("avances").get().addOnSuccessListener {
+                resultado ->
+            if(resultado != null){
+                var videos: Videos
+                var doc : Articulos
+                for (av in resultado){
+                    val nuevoAvance = Avance()
+                    nuevoAvance.idMaterial = av.id
+                    nuevoAvance.fecha = av.data["fecha"] as String
+                    nuevoAvance.tipoMaterial = av.data["tipoMaterial"] as String
+                    nuevoAvance.progreso = av.data["progreso"] as String
+                    if(nuevoAvance.tipoMaterial == "Video"){
+                        videos = buscarMaterialVideo(nuevoAvance.idMaterial)
+                        nuevoAvance.nombreMaterial = videos.nombreVideo
+                    }else{
+                        doc = buscarMaterialDoc(nuevoAvance.idMaterial)
+                        nuevoAvance.nombreMaterial = doc.nombreArticulo
+                    }
+                    dataAViewModel.agregarAvance(nuevoAvance)
+                }
+                val inventario =dataAViewModel.avancesRegistrados
+                val material = inventario[posicionAvance]
+                val tarjetaProgreso = FragmentTarjetaProgreso.newInstance(material.nombreMaterial,material.tipoMaterial,material.progreso,material.fecha)
+                supportFragmentManager.beginTransaction().add(R.id.fragmentContainerTarjetaProgresoInicio,tarjetaProgreso).commit()
+            }
+        }
     }
 
     companion object {
@@ -71,6 +112,28 @@ class Inicio : AppCompatActivity() {
         dialog.show(supportFragmentManager, "DialogoBusqueda")
     }
 
+    private fun buscarMaterialVideo(idMaterial : String): Videos{
+        var video = Videos()
+        val inventario = dataVViewModel.videosRegistrados
+        for (material in inventario){
+            if (material.idVideo == idMaterial){
+                video = material
+            }
+        }
+        return video
+    }
+
+    private fun buscarMaterialDoc(idMaterial : String): Articulos{
+        var doc = Articulos()
+        val inventario = dataDViewModel.articulosRegistrados
+        for (material in inventario){
+            if (material.idArticulo == idMaterial){
+                doc = material
+            }
+        }
+        return doc
+    }
+
     private fun redireccionBusqueda(flag: Boolean, texto : String){
         if (flag){
             actividadRegreso = "Busqueda"
@@ -108,10 +171,28 @@ class Inicio : AppCompatActivity() {
     @Suppress("UNUSED_PARAMETER")
     fun redireccionMaterial(unBoton: View){
         actividadRegreso = "Material"
-        cambioActividad()
+        if (dataAViewModel.avancesRegistrados.size > 0) {
+            val material = dataAViewModel.avancesRegistrados[posicionAvance]
+            val datos = intent.apply {
+                putExtra("Actividad", actividadRegreso)
+                putExtra("idData", material.idMaterial)
+                putExtra("tituloM", material.nombreMaterial)
+                putExtra("tipoMaterial", material.tipoMaterial)
+            }
+            setResult(Activity.RESULT_OK,datos)
+            finish()
+        }else {
+            val datos = intent.apply {
+                putExtra("Actividad", actividadRegreso)
+            }
+            setResult(Activity.RESULT_OK,datos)
+            finish()
+        }
+
     }
 
     private fun cambioActividad(){
+
         val datos = intent.apply {
             putExtra("Actividad", actividadRegreso)
         }
@@ -156,6 +237,45 @@ class Inicio : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerViewDescubre, tarjetaDescubre).commit()
         }else{
             posicionDescubre=-1
+        }
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun cambioDataTarjetaAvanceDerecha(unBoton: View){
+        val max = dataAViewModel.avancesRegistrados.size - 1
+        if (dataAViewModel.avancesRegistrados.size >0){
+            if (posicionAvance == -1){
+                posicionAvance =0
+            }
+            posicionAvance += 1
+            if (posicionAvance > max){
+                posicionAvance -= 1
+            }
+            if(posicionAvance <= 2){
+                val material = dataAViewModel.avancesRegistrados[posicionAvance]
+                val tarjetaProgreso = FragmentTarjetaProgreso.newInstance(material.nombreMaterial,material.tipoMaterial,material.progreso,material.fecha)
+                supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerTarjetaProgresoInicio,tarjetaProgreso).commit()
+            }else{
+                posicionAvance=3
+            }
+        }
+
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun cambioDataTarjetaAvanceIzquierda(unBoton: View){
+        if (dataAViewModel.avancesRegistrados.size > 0) {
+            if (posicionAvance == 3){
+                posicionAvance = 2
+            }
+            posicionAvance -= 1
+            if(posicionAvance >= 0){
+                val material = dataAViewModel.avancesRegistrados[posicionAvance]
+                val tarjetaProgreso = FragmentTarjetaProgreso.newInstance(material.nombreMaterial,material.tipoMaterial,material.progreso,material.fecha)
+                supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerTarjetaProgresoInicio,tarjetaProgreso).commit()
+            }else{
+                posicionAvance=-1
+            }
         }
     }
 }

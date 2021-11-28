@@ -31,6 +31,7 @@
         android:layout_marginStart="178dp"
         android:layout_marginEnd="29dp"
         android:contentDescription="@string/todo"
+        android:onClick="cambioDataTarjetaAvanceIzquierda"
         app:layout_constraintBottom_toBottomOf="@+id/subtituloInicioProgreso"
         app:layout_constraintEnd_toStartOf="@+id/butonDerechaInicioProgreso"
         app:layout_constraintStart_toEndOf="@+id/subtituloInicioProgreso"
@@ -45,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/todo"
+        android:onClick="cambioDataTarjetaAvanceDerecha"
         app:layout_constraintBottom_toBottomOf="@+id/butonIzquierdaInicioProgreso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/butonIzquierdaInicioProgreso"
@@ -191,7 +193,7 @@
         app:layout_constraintVertical_bias="0.882">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView2"
+            android:id="@+id/fragmentContainerTarjetaProgresoInicio"
             android:name="com.example.dionaro.inicio.FragmentTarjetaProgreso"
             style="@style/TarjetaMorada"
             android:onClick="redireccionMaterial"
