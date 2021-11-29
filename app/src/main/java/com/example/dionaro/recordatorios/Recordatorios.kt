@@ -11,7 +11,6 @@ import com.example.dionaro.R
 
 class Recordatorios : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recordatorios)
@@ -25,6 +24,7 @@ class Recordatorios : AppCompatActivity() {
         }
     }
 
+    //interacciones con bototones y regreso al inicio
     @Suppress("UNUSED_PARAMETER")
     fun regresarInicio(view: View){
         val accion = "RegresoHome"
@@ -34,6 +34,7 @@ class Recordatorios : AppCompatActivity() {
         setResult(Activity.RESULT_OK,datos)
         finish()
     }
+
     @Suppress("UNUSED_PARAMETER")
     fun mensajePremium(view: View){
         Toast.makeText(this, "Para más hazte premium", Toast.LENGTH_SHORT).show()

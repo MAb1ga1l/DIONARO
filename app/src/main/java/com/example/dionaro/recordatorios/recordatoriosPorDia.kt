@@ -38,6 +38,7 @@ class recordatoriosPorDia : Fragment() {
         return vista
     }
 
+    //Parte para festionar las listas
     private inner class RecordatorioAdapter(var inventario: List<String>) :
         RecyclerView.Adapter<RecordatorioHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecordatorioHolder {
