@@ -12,8 +12,8 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.dionaro.DataMaterial.ArticulosViewModel
-import com.example.dionaro.DataMaterial.VideosViewModel
+import com.example.dionaro.dataMaterial.ArticulosViewModel
+import com.example.dionaro.dataMaterial.VideosViewModel
 import com.example.dionaro.R
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*

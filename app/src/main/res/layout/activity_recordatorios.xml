@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azul"
-    tools:context=".Recordatorios.Recordatorios"
+    tools:context=".recordatorios.Recordatorios"
     tools:layout_editor_absoluteY="25dp">
 
     <ImageButton
@@ -60,7 +60,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView4"
-            android:name="com.example.dionaro.Recordatorios.recordatoriosPorDia"
+            android:name="com.example.dionaro.recordatorios.recordatoriosPorDia"
             android:layout_width="409dp"
             android:layout_height="327dp"
             app:layout_constraintBottom_toBottomOf="parent"

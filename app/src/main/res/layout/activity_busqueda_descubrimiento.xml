@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azul"
-    tools:context=".BusquedaDescubrimiento.BusquedaDescubrimiento">
+    tools:context=".busquedaDescubrimiento.BusquedaDescubrimiento">
 
     <TextView
         android:id="@+id/textViewTituloBusqueda"
@@ -101,7 +101,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerViewBusqueda"
-            android:name="com.example.dionaro.BusquedaDescubrimiento.listaTarjetasBusqueda"
+            android:name="com.example.dionaro.busquedaDescubrimiento.listaTarjetasBusqueda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"

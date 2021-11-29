@@ -14,19 +14,19 @@
         android:theme="@style/Theme.DIONARO"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".Notas.NotaAbierta"
+            android:name=".notas.NotaAbierta"
             android:exported="true" />
         <activity
-            android:name=".Descubrimiento.Descubrimiento"
+            android:name=".descubrimiento.Descubrimiento"
             android:exported="true" />
         <activity
-            android:name=".Recordatorios.Recordatorios"
+            android:name=".recordatorios.Recordatorios"
             android:exported="true" />
         <activity
-            android:name=".Notas.Notas"
+            android:name=".notas.Notas"
             android:exported="true" />
         <activity
-            android:name=".LogIn.Login"
+            android:name=".logIn.Login"
             android:exported="true" />
         <activity
             android:name=".inicio.Inicio"
@@ -36,13 +36,13 @@
             android:exported="true"
             android:label="@string/title_activity_informacion" />
         <activity
-            android:name=".Perfil.Perfil"
+            android:name=".perfil.Perfil"
             android:exported="true" />
         <activity
-            android:name=".BusquedaDescubrimiento.BusquedaDescubrimiento"
+            android:name=".busquedaDescubrimiento.BusquedaDescubrimiento"
             android:exported="true" />
         <activity
-            android:name=".AvanceFavoritos.AvancesFavoritos"
+            android:name=".avanceFavoritos.AvancesFavoritos"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

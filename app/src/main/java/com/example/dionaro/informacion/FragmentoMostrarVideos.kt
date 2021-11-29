@@ -8,7 +8,7 @@ import android.widget.TextView
 import android.widget.VideoView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.dionaro.DataMaterial.VideosViewModel
+import com.example.dionaro.dataMaterial.VideosViewModel
 import com.example.dionaro.R
 
 private const val ARG_PARAM1 = "idVideo"

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
-import com.example.dionaro.DataMaterial.ArticulosViewModel
+import com.example.dionaro.dataMaterial.ArticulosViewModel
 import com.example.dionaro.R
 
 private const val ARG_PARAM1 = "idMaterial"

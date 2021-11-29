@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="327dp"
     android:background="@drawable/half_rounded_shape"
-    tools:context=".Recordatorios.recordatoriosPorDia">
+    tools:context=".recordatorios.recordatoriosPorDia">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

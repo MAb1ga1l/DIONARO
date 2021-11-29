@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azul"
-    tools:context=".Notas.Notas" >
+    tools:context=".notas.Notas" >
 
     <ImageButton
         style="@style/BotonIconoBlancoSecundario"
@@ -61,7 +61,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerViewNotas"
-            android:name="com.example.dionaro.Notas.ListaNotas"
+            android:name="com.example.dionaro.notas.ListaNotas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -8,9 +8,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.dionaro.DataMaterial.*
-import com.example.dionaro.DataUser.Avance
-import com.example.dionaro.DataUser.AvanceViewModel
+import com.example.dionaro.dataMaterial.*
+import com.example.dionaro.dataUser.Avance
+import com.example.dionaro.dataUser.AvanceViewModel
 import com.example.dionaro.R
 import com.google.firebase.firestore.FirebaseFirestore
 

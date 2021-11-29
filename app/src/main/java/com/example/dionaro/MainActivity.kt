@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.example.dionaro.AvanceFavoritos.AvancesFavoritos
-import com.example.dionaro.BusquedaDescubrimiento.BusquedaDescubrimiento
-import com.example.dionaro.Descubrimiento.Descubrimiento
-import com.example.dionaro.Notas.Notas
-import com.example.dionaro.Perfil.Perfil
-import com.example.dionaro.Recordatorios.Recordatorios
+import com.example.dionaro.avanceFavoritos.AvancesFavoritos
+import com.example.dionaro.busquedaDescubrimiento.BusquedaDescubrimiento
+import com.example.dionaro.descubrimiento.Descubrimiento
+import com.example.dionaro.notas.Notas
+import com.example.dionaro.perfil.Perfil
+import com.example.dionaro.recordatorios.Recordatorios
 import com.example.dionaro.informacion.Informacion
 import com.example.dionaro.inicio.Inicio
 

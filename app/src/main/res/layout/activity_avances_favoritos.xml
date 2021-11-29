@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azul"
-    tools:context=".AvanceFavoritos.AvancesFavoritos"
+    tools:context=".avanceFavoritos.AvancesFavoritos"
     tools:ignore="Overdraw">
 
     <ImageButton
@@ -231,7 +231,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerViewFavAvances"
-            android:name="com.example.dionaro.AvanceFavoritos.ListaMateriales"
+            android:name="com.example.dionaro.avanceFavoritos.ListaMateriales"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginStart="5dp"
