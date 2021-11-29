@@ -37,7 +37,7 @@
         app:layout_constraintStart_toEndOf="@+id/subtituloInicioProgreso"
         app:layout_constraintTop_toTopOf="@+id/subtituloInicioProgreso"
         app:srcCompat="@drawable/icons8_chevron_left_30"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <ImageButton
         android:id="@+id/butonDerechaInicioProgreso"
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/butonIzquierdaInicioProgreso"
         app:srcCompat="@drawable/icons8_chevron_right_30"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,ImageContrastCheck" />
+        tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <TextView
         android:id="@+id/subtituloInicioProgreso"

@@ -35,7 +35,7 @@
         app:layout_constraintStart_toEndOf="@+id/botonHomeRecordatorios"
         app:layout_constraintTop_toTopOf="@+id/botonHomeRecordatorios"
         app:srcCompat="@drawable/icons8_menu_vertical_24"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
     <CalendarView
         android:id="@+id/calendarViewRecordatorios"

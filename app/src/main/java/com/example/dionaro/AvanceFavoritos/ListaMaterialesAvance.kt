@@ -1,13 +1,15 @@
+@file:Suppress("unused")
+
 package com.example.dionaro.AvanceFavoritos
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,8 +19,6 @@ import com.example.dionaro.DataMaterial.Videos
 import com.example.dionaro.DataMaterial.VideosViewModel
 import com.example.dionaro.DataUser.Avance
 import com.example.dionaro.DataUser.AvanceViewModel
-import com.example.dionaro.DataUser.Favoritos
-import com.example.dionaro.DataUser.FavoritosViewModel
 import com.example.dionaro.R
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso

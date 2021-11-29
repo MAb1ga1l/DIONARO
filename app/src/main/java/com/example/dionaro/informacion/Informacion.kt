@@ -105,7 +105,7 @@ class Informacion : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun buscarLink() : String{
+    private fun buscarLink() : String{
         var link = ""
         if (tipoMaterial == "Video"){
             val inventario = dataVViewModel.videosRegistrados

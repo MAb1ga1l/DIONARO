@@ -67,7 +67,7 @@ class recordatoriosPorDia : Fragment() {
 
     }
 
-    fun mensajePremium(){
+    private fun mensajePremium(){
         Toast.makeText(context, "Para más hazte premium", Toast.LENGTH_SHORT).show()
     }
 }
